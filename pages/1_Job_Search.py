@@ -1,9 +1,13 @@
 from __future__ import annotations
 
+import html
+import json
+import re
 import sys
 from pathlib import Path
 
 import streamlit as st
+import requests
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SEARCH_TOOL_DIR = REPO_ROOT / "Random-Testing" / "Search-Tool"
@@ -113,6 +117,92 @@ def _init_session_state() -> None:
             st.session_state[key] = value
 
 
+_TAG_RE = re.compile(r"<[^>]+>")
+_WS_RE = re.compile(r"\s+")
+_JSON_LD_TYPES = {"jobposting", "job_posting"}
+
+
+def _normalize_text(value: str) -> str:
+    text = html.unescape(_TAG_RE.sub(" ", value or ""))
+    return _WS_RE.sub(" ", text).strip()
+
+
+def _walk_jsonld_descriptions(node: object) -> list[str]:
+    matches: list[str] = []
+    if isinstance(node, dict):
+        node_type = str(node.get("@type", "")).replace(" ", "").lower()
+        if node_type in _JSON_LD_TYPES and isinstance(node.get("description"), str):
+            matches.append(node["description"])
+        for value in node.values():
+            matches.extend(_walk_jsonld_descriptions(value))
+    elif isinstance(node, list):
+        for item in node:
+            matches.extend(_walk_jsonld_descriptions(item))
+    return matches
+
+
+def _extract_html_candidates(page_html: str) -> list[str]:
+    candidates: list[str] = []
+
+    for match in re.findall(
+        r'<script[^>]+type=["\']application/ld\+json["\'][^>]*>(.*?)</script>',
+        page_html,
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        try:
+            data = json.loads(match)
+        except json.JSONDecodeError:
+            continue
+        candidates.extend(_walk_jsonld_descriptions(data))
+
+    for match in re.findall(
+        r'<meta[^>]+(?:name|property)=["\'](?:description|og:description|twitter:description)["\'][^>]+content=["\'](.*?)["\'][^>]*>',
+        page_html,
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        candidates.append(match)
+
+    return [_normalize_text(candidate) for candidate in candidates if _normalize_text(candidate)]
+
+
+def _looks_more_complete(candidate: str, fallback: str) -> bool:
+    if not candidate:
+        return False
+    if len(candidate) < max(700, len(fallback) + 150):
+        return False
+    if candidate == fallback:
+        return False
+    return True
+
+
+def _fetch_full_job_description(url: str, fallback: str) -> str:
+    if not url:
+        return fallback
+
+    try:
+        response = requests.get(
+            url,
+            timeout=10,
+            headers={
+                "User-Agent": (
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/124.0.0.0 Safari/537.36"
+                )
+            },
+        )
+        response.raise_for_status()
+    except requests.RequestException:
+        return fallback
+
+    candidates = _extract_html_candidates(response.text)
+    if not candidates:
+        return fallback
+
+    best = max(candidates, key=len)
+    return best if _looks_more_complete(best, fallback) else fallback
+
+
 def main() -> None:
     st.set_page_config(page_title="HireMe.AI Job Search", layout="wide")
     _init_session_state()
@@ -204,12 +294,14 @@ def main() -> None:
                     desc = desc[:600] + "..."
                 st.markdown(desc)
                 if st.button("Use In Resume Builder", key=f"use_job_{i}"):
+                    with st.spinner("Loading the full job description..."):
+                        full_description = _fetch_full_job_description(job.url, job.description)
                     st.session_state.job_title = job.title
                     st.session_state.company_name = job.company
-                    st.session_state.job_description = job.description
+                    st.session_state.job_description = full_description
                     st.session_state.job_title_input = job.title
                     st.session_state.company_name_input = job.company
-                    st.session_state.job_description_input = job.description
+                    st.session_state.job_description_input = full_description
                     st.session_state.job_builder_prefill_pending = True
                     st.success("Sent this job to the resume builder.")
 
