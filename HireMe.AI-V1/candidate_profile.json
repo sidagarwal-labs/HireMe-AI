@@ -1,0 +1,44 @@
+{
+    "document_type": "resume",
+    "name": "",
+    "contact": {
+        "email": "",
+        "phone": "",
+        "website": "",
+        "linkedin": ""
+    },
+    "summary": "",
+    "work_experience": [
+        {
+            "job_title": "",
+            "company": "",
+            "start_date": "",
+            "end_date": "",
+            "bullets": []
+        }
+    ],
+    "education": [
+        {
+            "degree": "",
+            "school": "",
+            "start_date": "",
+            "end_date": "",
+            "details": []
+        }
+    ],
+    "skills": {
+        "technical": [],
+        "tools": [],
+        "soft_skills": []
+    },
+    "projects": [
+        {
+            "project_name": "",
+            "bullets": []
+        }
+    ],
+    "certifications": [],
+    "awards_and_achievements": [],
+    "warnings": [],
+    "confidence": 0.0
+}

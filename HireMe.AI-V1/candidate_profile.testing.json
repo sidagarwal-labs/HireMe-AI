@@ -1,0 +1,118 @@
+{
+  "name": "Jordan Lee",
+  "contact": {
+    "email": "jordan.lee@example.com",
+    "phone": "704-555-0189",
+    "website": "https://www.linkedin.com/in/jordanlee-data"
+  },
+  "summary": "Data analyst with 4+ years of experience building KPI dashboards, automating reporting workflows, and translating business questions into actionable insights. Strong background in SQL, Python, and BI tools with a track record of improving decision speed and data quality.",
+  "work_experience": [
+    {
+      "job_title": "Senior Data Analyst",
+      "company": "BlueArc Logistics",
+      "start_date": "June 2022",
+      "end_date": "Present",
+      "bullets": [
+        "Built and maintained Tableau dashboards for operations and finance, reducing weekly reporting time by 35%.",
+        "Developed SQL data models for shipment performance tracking across 12 regions.",
+        "Automated recurring KPI exports with Python scripts, saving 10+ analyst hours per week.",
+        "Partnered with leadership to define SLA metrics and identify root causes of delivery delays."
+      ]
+    },
+    {
+      "job_title": "Data Analyst",
+      "company": "Meridian Financial Services",
+      "start_date": "August 2020",
+      "end_date": "May 2022",
+      "bullets": [
+        "Analyzed customer behavior and retention trends using SQL and Excel, supporting campaign strategy changes.",
+        "Created monthly executive scorecards in Power BI to monitor revenue, churn, and product adoption.",
+        "Improved data validation checks for inbound CRM data, decreasing reporting errors by 22%."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "M.S. in Data Science",
+      "school": "University of North Carolina at Charlotte",
+      "start_date": "August 2018",
+      "end_date": "May 2020",
+      "details": [
+        "Coursework: Applied Machine Learning, Data Mining, Database Systems, NLP",
+        "Capstone: Built churn prediction pipeline using XGBoost and feature engineering"
+      ]
+    },
+    {
+      "degree": "B.S. in Business Analytics",
+      "school": "North Carolina State University",
+      "start_date": "August 2014",
+      "end_date": "May 2018",
+      "details": [
+        "Minor: Statistics",
+        "Graduated magna cum laude"
+      ]
+    }
+  ],
+  "skills": {
+    "technical": [
+      "Python",
+      "SQL",
+      "R",
+      "Statistics",
+      "A/B Testing",
+      "Data Modeling",
+      "ETL"
+    ],
+    "tools": [
+      "Tableau",
+      "Power BI",
+      "Excel",
+      "Git",
+      "Snowflake",
+      "BigQuery"
+    ],
+    "soft_skills": [
+      "Stakeholder Communication",
+      "Problem Solving",
+      "Cross-functional Collaboration",
+      "Presentation"
+    ]
+  },
+  "projects": [
+    {
+      "project_name": "Customer Churn Prediction",
+      "bullets": [
+        "Built binary classification model with 0.87 ROC-AUC on telecom churn dataset.",
+        "Designed feature pipeline and SHAP-based interpretability report for business users."
+      ]
+    },
+    {
+      "project_name": "Sales Forecasting Dashboard",
+      "bullets": [
+        "Combined SQL warehouse data with Tableau to visualize forecast vs. actuals by product line.",
+        "Enabled weekly planning meetings with drill-down views by region and account segment."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Microsoft Certified: Power BI Data Analyst Associate"
+    },
+    {
+      "name": "Google Data Analytics Professional Certificate"
+    }
+  ],
+  "awards_and_achievements": [
+    {
+      "title": "Analytics Excellence Award",
+      "year": "2023",
+      "description": "Recognized for building an operations KPI framework adopted company-wide."
+    }
+  ],
+  "cover_letter_preferences": {
+    "recipient_name": "Hiring Manager",
+    "opening_style": "professional",
+    "tone": "confident",
+    "length": "medium"
+  }
+}

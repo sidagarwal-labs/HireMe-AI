@@ -1,0 +1,169 @@
+[
+  {
+    "id": "candidate_1",
+    "name": "Taylor Morgan",
+    "contact": {
+      "email": "taylormorgan@email.com",
+      "phone": "(404) 555-0199",
+      "website": "www.taylormorgan.dev"
+    },
+    "summary": "Data analyst and early-career AI product builder with experience translating business needs into dashboards, workflow automations, and candidate-facing tools.",
+    "work_experience": [
+      {
+        "job_title": "Product Analyst",
+        "company": "BrightPath Talent",
+        "start_date": "June 2024",
+        "end_date": "Present",
+        "bullets": [
+          "Built reporting dashboards that reduced weekly recruiting ops review time by 35%.",
+          "Partnered with recruiters and engineers to define metrics for candidate funnel performance.",
+          "Tested prompt variations for internal writing assistants used in resume and cover letter generation."
+        ]
+      },
+      {
+        "job_title": "Data Analytics Intern",
+        "company": "Northstar Health",
+        "start_date": "January 2024",
+        "end_date": "May 2024",
+        "bullets": [
+          "Cleaned and analyzed patient operations data using Python and SQL.",
+          "Created Tableau dashboards for leadership to track appointment utilization trends.",
+          "Documented KPI definitions and presented weekly insights to stakeholders."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Business Analytics",
+        "school": "Georgia State University",
+        "start_date": "August 2021",
+        "end_date": "May 2025",
+        "details": [
+          "Relevant Coursework: Data Mining, Database Systems, Applied Machine Learning"
+        ]
+      }
+    ],
+    "skills": {
+      "technical": ["Python", "SQL", "Pandas", "scikit-learn"],
+      "tools": ["Tableau", "Excel", "Git", "Jupyter", "Figma"],
+      "soft_skills": ["Communication", "stakeholder management", "problem solving"]
+    },
+    "projects": [
+      {
+        "project_name": "HireMe AI",
+        "bullets": [
+          "Built a prototype application that tailors resumes and cover letters from candidate data and job descriptions.",
+          "Designed prompts and structured outputs for recruiter-friendly document generation."
+        ]
+      },
+      {
+        "project_name": "Interview Prep Assistant",
+        "bullets": [
+          "Created a lightweight LLM workflow to generate likely interview questions from job postings."
+        ]
+      }
+    ],
+    "certifications": [
+      {"name": "Google Data Analytics Certificate"}
+    ],
+    "awards_and_achievements": [
+      {"title": "Dean's List", "year": "2023", "description": ""}
+    ],
+    "cover_letter_preferences": {
+      "recipient_name": "Hiring Manager",
+      "opening_style": "professional",
+      "tone": "confident",
+      "length": "medium"
+    }
+  },
+  {
+    "id": "candidate_2",
+    "name": "Jordan Lee",
+    "contact": {
+      "email": "jordan.lee@email.com",
+      "phone": "(212) 555-0342",
+      "website": "jordanlee.io"
+    },
+    "summary": "Full-stack software engineer with 4 years of experience building scalable web applications. Passionate about developer experience and CI/CD automation.",
+    "work_experience": [
+      {
+        "job_title": "Software Engineer II",
+        "company": "Cloudway Inc.",
+        "start_date": "March 2023",
+        "end_date": "Present",
+        "bullets": [
+          "Led migration of monolithic API to microservices, reducing deploy times by 60%.",
+          "Built real-time notification system handling 500K events/day using Kafka and WebSockets.",
+          "Mentored 3 junior engineers through code reviews and pair programming sessions."
+        ]
+      },
+      {
+        "job_title": "Software Engineer I",
+        "company": "DataBridge Solutions",
+        "start_date": "June 2021",
+        "end_date": "February 2023",
+        "bullets": [
+          "Developed REST APIs in Python/FastAPI serving 2M+ requests daily.",
+          "Implemented automated testing pipeline that increased code coverage from 45% to 88%.",
+          "Designed and built admin dashboard using React and TypeScript."
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Science in Computer Science",
+        "school": "New York University",
+        "start_date": "September 2017",
+        "end_date": "May 2021",
+        "details": [
+          "Minor in Mathematics",
+          "Dean's List 2019-2021"
+        ]
+      }
+    ],
+    "skills": {
+      "technical": ["Python", "TypeScript", "Java", "SQL", "GraphQL"],
+      "tools": ["AWS", "Docker", "Kubernetes", "GitHub Actions", "Terraform"],
+      "soft_skills": ["Mentorship", "Cross-functional collaboration", "Technical writing"]
+    },
+    "projects": [
+      {
+        "project_name": "DevPortal",
+        "bullets": [
+          "Open-source internal developer portal used by 200+ engineers.",
+          "Built plugin system for custom integrations with Jira, PagerDuty, and Datadog."
+        ]
+      }
+    ],
+    "certifications": [
+      {"name": "AWS Solutions Architect Associate"}
+    ],
+    "awards_and_achievements": [
+      {"title": "Hack the Future Winner", "year": "2022", "description": "First place at company hackathon for real-time anomaly detection tool."}
+    ],
+    "cover_letter_preferences": {
+      "recipient_name": "Hiring Manager",
+      "opening_style": "professional",
+      "tone": "confident",
+      "length": "medium"
+    }
+  },
+  {
+    "id": "candidate_edge_empty",
+    "name": "",
+    "contact": {"email": "", "phone": "", "website": ""},
+    "summary": "",
+    "work_experience": [],
+    "education": [],
+    "skills": {"technical": [], "tools": [], "soft_skills": []},
+    "projects": [],
+    "certifications": [],
+    "awards_and_achievements": [],
+    "cover_letter_preferences": {
+      "recipient_name": "Hiring Manager",
+      "opening_style": "professional",
+      "tone": "confident",
+      "length": "medium"
+    }
+  }
+]

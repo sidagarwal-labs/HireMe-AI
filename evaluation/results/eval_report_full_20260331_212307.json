@@ -1,0 +1,3847 @@
+{
+  "run_timestamp": "20260331_202402",
+  "parser": {
+    "summary": {
+      "total": 1,
+      "successful": 1,
+      "avg_accuracy": 1.0
+    },
+    "details": [
+      {
+        "resume_file": "C:\\Users\\sidagarwal\\OneDrive - Microsoft\\Documents\\GitHub\\Spring-2026-DSBA-6010-Group-13-HireMe-AI\\evaluation\\test_data\\parser_inputs\\sample_resume.txt",
+        "golden_candidate": "Taylor Morgan",
+        "parser_accuracy": {
+          "field_scores": {
+            "name": 1.0,
+            "contact": 1.0,
+            "work_experience_count": 1.0,
+            "work_companies_matched": 1.0,
+            "education_count": 1.0,
+            "education_schools_matched": 1.0,
+            "skills_technical": 1.0,
+            "skills_tools": 1.0,
+            "skills_soft_skills": 1.0,
+            "projects_count": 1.0,
+            "certifications_count": 1.0
+          },
+          "score": 1.0,
+          "max_score": 1.0
+        },
+        "parsed_profile": {
+          "name": "Taylor Morgan",
+          "contact": {
+            "email": "taylormorgan@email.com",
+            "phone": "(404) 555-0199",
+            "website": "www.taylormorgan.dev"
+          },
+          "summary": "Data analyst and early-career AI product builder with experience translating business needs into dashboards, workflow automations, and candidate-facing tools. Strong interest in job-tech, resume optimization, and LLM-assisted user experiences.",
+          "work_experience": [
+            {
+              "job_title": "Product Analyst",
+              "company": "BrightPath Talent",
+              "start_date": "June 2024",
+              "end_date": "Present",
+              "bullets": [
+                "Built reporting dashboards that reduced weekly recruiting ops review time by 35%.",
+                "Partnered with recruiters and engineers to define metrics for candidate funnel performance.",
+                "Tested prompt variations for internal writing assistants used in resume and cover letter generation."
+              ]
+            },
+            {
+              "job_title": "Data Analytics Intern",
+              "company": "Northstar Health",
+              "start_date": "January 2024",
+              "end_date": "May 2024",
+              "bullets": [
+                "Cleaned and analyzed patient operations data using Python and SQL.",
+                "Created Tableau dashboards for leadership to track appointment utilization trends.",
+                "Documented KPI definitions and presented weekly insights to stakeholders."
+              ]
+            }
+          ],
+          "education": [
+            {
+              "degree": "Bachelor of Science in Business Analytics",
+              "school": "Georgia State University",
+              "start_date": "August 2021",
+              "end_date": "May 2025",
+              "details": [
+                "Relevant Coursework: Data Mining, Database Systems, Applied Machine Learning"
+              ]
+            }
+          ],
+          "skills": {
+            "technical": [
+              "Python",
+              "SQL",
+              "Pandas",
+              "scikit-learn"
+            ],
+            "tools": [
+              "Tableau",
+              "Excel",
+              "Git",
+              "Jupyter",
+              "Figma"
+            ],
+            "soft_skills": [
+              "Communication",
+              "stakeholder management",
+              "problem solving"
+            ]
+          },
+          "projects": [
+            {
+              "project_name": "HireMe AI",
+              "bullets": [
+                "Built a prototype application that tailors resumes and cover letters from candidate data and job descriptions.",
+                "Designed prompts and structured outputs for recruiter-friendly document generation."
+              ]
+            },
+            {
+              "project_name": "Interview Prep Assistant",
+              "bullets": [
+                "Created a lightweight LLM workflow to generate likely interview questions from job postings."
+              ]
+            }
+          ],
+          "certifications": [
+            {
+              "name": "Google Data Analytics Certificate"
+            }
+          ],
+          "awards_and_achievements": [
+            {
+              "title": "Dean's List",
+              "year": "2023",
+              "description": ""
+            }
+          ],
+          "cover_letter_preferences": {
+            "recipient_name": "Hiring Manager",
+            "opening_style": "professional",
+            "tone": "confident",
+            "length": "medium"
+          }
+        },
+        "timing_seconds": 33.75,
+        "status": "success"
+      }
+    ]
+  },
+  "generator": {
+    "summary": {
+      "total": 15,
+      "successful": 15,
+      "failed": 0,
+      "resume_averages": {
+        "faithfulness": 0.6467,
+        "relevance": 0.3533,
+        "coherence": 0.8267,
+        "completeness": 0.9333,
+        "keyword_overlap": 0.3069,
+        "template_adherence": 0.9487
+      },
+      "cover_letter_averages": {
+        "faithfulness": 0.5467,
+        "relevance": 0.34,
+        "coherence": 0.7067,
+        "keyword_overlap": 0.3362,
+        "template_adherence": 1.0
+      },
+      "avg_timing_seconds": 72.25
+    },
+    "details": [
+      {
+        "candidate": "candidate_1",
+        "job": "job_data_analyst",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The generated document largely contains facts explicitly present in the source data. It accurately reflects the candidate's name, contact information, summary, work experience (including job titles, companies, dates, and bullet points), education details, skills, projects, certifications, and awards as provided. The only minor deduction is that the phrase \"Proven ability to partner with cross-functional stakeholders to define metrics, perform exploratory data analysis, and present findings to leadership\" introduces a slightly more detailed interpretation not explicitly stated in the source, but it aligns with the original descriptions. Overall, the content is faithful to the source data with no invented entities or fabricated metrics."
+          },
+          "relevance": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The candidate's experience with building dashboards, performing SQL and Python analyses, and presenting insights aligns well with the core responsibilities of the Data Analyst role. The mention of working with cross-functional stakeholders and defining metrics demonstrates relevant collaboration skills. The proficiency in Tableau and SQL is clearly highlighted, matching the job requirements. However, the experience with machine learning is only tangentially referenced in coursework and projects, and there is limited detail on cloud data warehouses like Snowflake or BigQuery, which are listed as \"nice to have.\" Overall, the document emphasizes relevant skills and experiences but could better highlight familiarity with cloud data platforms and more directly address the specific tools and advanced requirements mentioned in the job description."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It follows a logical order, presenting recent experience first and including relevant details in each section. The language is grammatically correct, and there is minimal repetition or contradiction. However, some minor improvements could be made for even greater clarity and flow\u2014for example, slightly more consistent formatting or elaboration in certain areas. Overall, it effectively communicates the candidate's background in a coherent manner."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.107,
+            "recall": 0.4167,
+            "matched": [
+              "analysis",
+              "analyst",
+              "bachelor",
+              "building",
+              "communication",
+              "cross-functional",
+              "dashboards",
+              "data",
+              "experience",
+              "exploratory",
+              "findings",
+              "leadership.",
+              "learning",
+              "machine",
+              "python",
+              "sql",
+              "stakeholders",
+              "tableau",
+              "work",
+              "writing"
+            ],
+            "missed": [
+              "actionable",
+              "bigquery",
+              "cloud",
+              "degree",
+              "familiarity",
+              "field",
+              "growing",
+              "include",
+              "insights.",
+              "join",
+              "looking",
+              "nice",
+              "performing",
+              "power",
+              "presenting",
+              "proficiency",
+              "quantitative",
+              "queries",
+              "raw",
+              "requirements",
+              "responsibilities",
+              "skills.",
+              "snowflake",
+              "strong",
+              "team.",
+              "turn",
+              "warehouses",
+              "years"
+            ],
+            "score": 0.4167,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Taylor Morgan",
+              "Summary",
+              "Work Experience",
+              "Product Analyst - BrightPath Talent",
+              "Data Analytics Intern - Northstar Health",
+              "Education",
+              "Bachelor of Science in Business Analytics - Georgia State University",
+              "Skills",
+              "Projects",
+              "HireMe AI",
+              "Interview Prep Assistant",
+              "Certifications",
+              "Google Data Analytics Certificate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10\n\nReasoning:  \nThe generated document largely adheres to the source data, accurately reflecting the candidate's name, contact information, education, skills, and work experience. It correctly states the degree from Georgia State University, the internship at Northstar Health, and the current role at BrightPath Talent, including the achievement of reducing review time by 35%. The skills listed (Python, SQL, Tableau, communication, stakeholder management) match the source.\n\nHowever, there are a few minor issues:  \n- The experience duration is summarized as \"2 years,\" which is a reasonable approximation but not explicitly stated in the source. The source specifies two roles with overlapping dates (January 2024\u2013May 2024 and June 2024\u2013Present), totaling roughly two years, so this is acceptable.  \n- The phrase \"translating business needs into dashboards, workflow automations, and candidate-facing tools\" is directly from the summary, which is accurate.  \n- The mention of \"building reporting dashboards that reduced weekly recruiting ops review time by 35%\" is directly from the source.  \n- The skills and projects are consistent with the source data, with no fabricated items.  \n- The cover letter's tone and content are plausible and aligned with the source data.\n\nHallucinations or fabrications are minimal; the only slight inference is the approximate \"2 years\" of experience, which is reasonable given the overlapping dates but not explicitly stated as \"2 years\" in the source. Overall, the document is faithful to the source data with no significant inaccuracies or hallucinations.\n\n"
+          },
+          "relevance": {
+            "score": 7.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 7/10  \nReasoning: The candidate's background in data analytics, experience with dashboards, SQL, Python, and Tableau aligns well with the core requirements of the Data Analyst role. The mention of building dashboards, performing data analysis, and presenting to leadership directly addresses key responsibilities. However, the resume does not explicitly mention experience with cloud data warehouses like Snowflake or BigQuery, nor does it specify familiarity with Power BI, which are part of the preferred qualifications. The work experience is relevant but could be more tailored to emphasize skills and projects that match the job description more closely. Overall, it is a strong fit but slightly lacking in highlighting some of the \"nice to have\" skills and specific tools mentioned."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It presents relevant experience in a logical order, emphasizing recent roles and skills that align with the job description. The language is grammatically correct, and there is no noticeable repetition or contradiction. Minor improvements could include more specific examples of achievements or a slightly more engaging opening paragraph to enhance overall coherence and impact. Overall, it is a strong, coherent cover letter."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1351,
+            "recall": 0.4167,
+            "matched": [
+              "actionable",
+              "analysis",
+              "analyst",
+              "bachelor",
+              "communication",
+              "cross-functional",
+              "dashboards",
+              "data",
+              "experience",
+              "exploratory",
+              "findings",
+              "leadership.",
+              "presenting",
+              "python",
+              "queries",
+              "raw",
+              "sql",
+              "tableau",
+              "writing",
+              "years"
+            ],
+            "missed": [
+              "bigquery",
+              "building",
+              "cloud",
+              "degree",
+              "familiarity",
+              "field",
+              "growing",
+              "include",
+              "insights.",
+              "join",
+              "learning",
+              "looking",
+              "machine",
+              "nice",
+              "performing",
+              "power",
+              "proficiency",
+              "quantitative",
+              "requirements",
+              "responsibilities",
+              "skills.",
+              "snowflake",
+              "stakeholders",
+              "strong",
+              "team.",
+              "turn",
+              "warehouses",
+              "work"
+            ],
+            "score": 0.4167,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 74.31,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_1",
+        "job": "job_swe_senior",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The generated document accurately reflects all facts explicitly present in the source data. It correctly lists the candidate's name, contact information, summary, work experience with correct job titles, companies, dates, and bullet points, as well as education details, skills, projects, certifications, and awards. The only minor point deduction is for the inclusion of a \"track record of delivering measurable improvements in operations efficiency\" in the summary, which, while plausible and consistent with the bullets, is an interpretive statement not explicitly stated in the source. However, since it aligns with the content and does not introduce false information, it is acceptable. Overall, the content is faithful to the source data with no invented entities or fabricated metrics."
+          },
+          "relevance": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The candidate's background is primarily in data analysis and AI product development, with skills focused on Python, SQL, and data visualization tools. While Python proficiency is relevant, the experience does not emphasize designing scalable backend systems, microservices, distributed architectures, or cloud infrastructure (AWS/GCP), which are core requirements for the Senior Software Engineer role. The work experience and projects are centered around data dashboards, automation, and AI prototypes rather than backend system architecture, microservices, or cloud infrastructure. Therefore, the document minimally addresses the key skills and experiences needed for the target role, resulting in a low relevance score."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It presents information logically, with recent experience listed first and consistent formatting. The language is grammatically correct, and there is no noticeable repetition or contradiction. Minor improvements could include more detailed descriptions in some sections or smoother transitions, but overall, it effectively communicates the candidate's background in a coherent manner."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0486,
+            "recall": 0.2308,
+            "matched": [
+              "backend",
+              "engineering",
+              "experience",
+              "python",
+              "scalable",
+              "seeking",
+              "software",
+              "systems",
+              "technical"
+            ],
+            "missed": [
+              "architect",
+              "architectures",
+              "aws",
+              "bonus",
+              "build",
+              "cloud",
+              "decisions.",
+              "design",
+              "developers",
+              "distributed",
+              "drive",
+              "engineer",
+              "event-driven",
+              "familiarity",
+              "gcp",
+              "graphql.",
+              "infrastructure",
+              "java",
+              "junior",
+              "kubernetes",
+              "mentor",
+              "microservices",
+              "pipelines.",
+              "proficiency",
+              "requirements",
+              "senior",
+              "strong",
+              "systems.",
+              "techforward",
+              "years"
+            ],
+            "score": 0.2308,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Taylor Morgan",
+              "Summary",
+              "Work Experience",
+              "Product Analyst - BrightPath Talent",
+              "Data Analytics Intern - Northstar Health",
+              "Education",
+              "Bachelor of Science in Business Analytics - Georgia State University",
+              "Skills",
+              "Projects",
+              "HireMe AI",
+              "Interview Prep Assistant",
+              "Certifications",
+              "Google Data Analytics Certificate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10\n\nReasoning:  \nThe generated document contains several inaccuracies and fabrications that reduce its faithfulness to the source data. Notably, the job title \"Senior Software Engineer\" and the company \"TechForward\" are not present in the source; the source only mentions \"BrightPath Talent\" and \"Northstar Health\" as employers, with roles \"Product Analyst\" and \"Data Analytics Intern.\" The mention of \"nearly 2 years of experience\" is an approximation not explicitly stated in the source, which specifies start and end dates. The phrase \"resulting in clearer insights and improved decision-making\" is an inferred interpretation, not directly from the source. Additionally, the letter references \"scalable backend systems and cloud-native architectures,\" which are not mentioned anywhere in the source data. The contact details, skills, projects, certifications, and awards are consistent with the source, but the core content about the employer, job title, and specific focus areas include hallucinations. Therefore, the overall faithfulness is limited, warranting a score of 4."
+          },
+          "relevance": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document primarily focuses on data analytics, dashboards, and AI product development, which are not directly aligned with the core requirements of the Senior Software Engineer role at TechForward. It mentions Python but lacks references to Java, distributed systems, microservices, cloud infrastructure (AWS/GCP), CI/CD pipelines, Kubernetes, event-driven architectures, or GraphQL\u2014all key skills and experiences specified in the job description. The work experience is relevant to data and analytics but does not emphasize backend system design, microservices architecture, or mentoring, which are central to the target role. Overall, the content does not sufficiently address the specific technical and leadership requirements of the position."
+          },
+          "coherence": {
+            "score": 7.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 7/10  \nReasoning: The document is generally well-organized, with a clear introduction, body, and closing. It maintains a professional tone and is mostly grammatically correct. The candidate effectively highlights relevant experience and skills, and the content is logically ordered, with recent experience presented first. However, there are some areas for improvement: the document could benefit from clearer section headings or transitions to enhance readability, and the mention of \"early-career AI product builder\" is somewhat vague and could be more specific. Additionally, the paragraph about technical skills could be more concise to improve flow. Overall, it is coherent but could be more polished in structure and clarity."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0685,
+            "recall": 0.2564,
+            "matched": [
+              "backend",
+              "engineer",
+              "experience",
+              "python",
+              "scalable",
+              "senior",
+              "software",
+              "systems",
+              "techforward",
+              "years"
+            ],
+            "missed": [
+              "architect",
+              "architectures",
+              "aws",
+              "bonus",
+              "build",
+              "cloud",
+              "decisions.",
+              "design",
+              "developers",
+              "distributed",
+              "drive",
+              "engineering",
+              "event-driven",
+              "familiarity",
+              "gcp",
+              "graphql.",
+              "infrastructure",
+              "java",
+              "junior",
+              "kubernetes",
+              "mentor",
+              "microservices",
+              "pipelines.",
+              "proficiency",
+              "requirements",
+              "seeking",
+              "strong",
+              "systems.",
+              "technical"
+            ],
+            "score": 0.2564,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 89.85,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_1",
+        "job": "job_ml_engineer",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The generated document largely aligns with the source data, accurately reflecting the candidate's name, contact info, summary, work experience, education, skills, projects, certifications, and awards as provided. The work experience entries, project descriptions, and education details are consistent with the source. The skills listed match the source data, and the certification and award are correctly included.\n\nHowever, the generated text introduces some information not present in the source:  \n- The mention of \"proficient in Python, SQL, and prototyping ML-powered features\" and \"applying ML engineering principles to NLP pipelines, recommendation systems, and real-time inference challenges at NeuralWave\" are not in the source data. These are fabricated claims or extrapolations.  \n- The phrase \"at NeuralWave\" is not in the source and appears to be an invented detail.  \n- The phrase \"aligning metrics across stakeholders and engineers\" is a slight paraphrase but consistent with the source.  \n- The rest of the content, including the structure and factual details, is faithful to the source.\n\nGiven these points, the score reflects high fidelity but deducts points for the fabricated details about specific skills, projects, and the company \"NeuralWave.\"  \n\nFinal score: 8/10"
+          },
+          "relevance": {
+            "score": 3.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 3/10  \nReasoning: The candidate's background is primarily in data analysis and general AI product development, with some experience in ML-related tasks like prototyping ML-powered features and working with prompts. However, the resume lacks explicit mention of advanced ML engineering experience, proficiency with key tools like PyTorch or TensorFlow, or direct involvement in NLP pipelines, recommendation systems, or real-time inference services. The work experience does not demonstrate the depth of 3+ years of ML engineering required, nor does it highlight MLOps expertise. Overall, the content is only loosely aligned with the core requirements of the NeuralWave role, resulting in a low relevance score."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It presents information logically, with most recent experience listed first and consistent formatting. The language is grammatically correct, and there is no noticeable repetition or contradiction. Minor improvements could include more detailed descriptions in some sections or clearer separation between projects and skills, but overall, it demonstrates good coherence and structure."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0829,
+            "recall": 0.3947,
+            "matched": [
+              "engineering",
+              "experience",
+              "inference",
+              "learning",
+              "machine",
+              "nlp",
+              "pipelines",
+              "python",
+              "real-time",
+              "recommendation",
+              "record",
+              "science",
+              "systems",
+              "tools",
+              "work"
+            ],
+            "missed": [
+              "computer",
+              "deploy",
+              "develop",
+              "engineer",
+              "field",
+              "hiring",
+              "kubeflow",
+              "mlflow",
+              "mlops",
+              "models.",
+              "neuralwave",
+              "phd",
+              "plus.",
+              "production",
+              "proficiency",
+              "publication",
+              "pytorch",
+              "related",
+              "requirements",
+              "services.",
+              "strong",
+              "tensorflow",
+              "years"
+            ],
+            "score": 0.3947,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Taylor Morgan",
+              "Summary",
+              "Work Experience",
+              "Product Analyst - BrightPath Talent",
+              "Data Analytics Intern - Northstar Health",
+              "Education",
+              "Bachelor of Science in Business Analytics - Georgia State University",
+              "Skills",
+              "Projects",
+              "HireMe AI",
+              "Interview Prep Assistant",
+              "Certifications",
+              "Google Data Analytics Certificate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10\n\nReasoning:  \nThe generated document largely adheres to the source data, accurately reflecting Taylor Morgan's background, work experience, education, skills, projects, and certifications. The mention of \"shipping NLP-powered tools and production-ready dashboards\" and the focus on NLP pipelines, recommendation systems, and real-time inference services are consistent with the source's emphasis on AI product building and data analytics, though these specific phrases are somewhat interpretative but plausible given the source's skills and projects.\n\nHowever, there are some minor issues:  \n- The phrase \"over 2 years of experience\" is an approximation; the source data indicates two roles starting in January 2024 and June 2024, with the current date being March 2026, which could be interpreted as roughly two years, but the exact phrasing \"over 2 years\" is an inference.  \n- The company \"NeuralWave\" and the specific position \"Machine Learning Engineer\" are not mentioned in the source; these are fabricated details.  \n- The phrase \"shipping NLP-powered tools\" is an inference based on the projects and skills but not explicitly stated in the source.  \n- The phrase \"real-time inference services\" is an extrapolation aligned with the skills but not explicitly in the source data.  \n- The cover letter's tone and structure are consistent with the preferences, but the specific company name and position are fabricated.\n\nOverall, the core facts about Taylor Morgan's experience, skills, projects, and education are accurate and explicitly supported by the source. The fabricated details about the company, position, and some technical emphasis slightly reduce the score but do not significantly distort the factual basis.\n\n"
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document demonstrates some relevant experience with NLP tools and AI product development, which aligns with NeuralWave's focus areas. It mentions experience with Python and building NLP-powered tools, which are pertinent skills. However, it lacks explicit mention of key requirements such as 3+ years of ML engineering experience, proficiency in PyTorch or TensorFlow, and experience with MLOps tools like MLflow or Kubeflow. The work experience is more centered on data analytics and product development rather than deploying production ML models or working on recommendation systems and real-time inference services. Overall, the relevance is moderate but does not sufficiently emphasize the core technical skills and experience specified in the job description."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, including an introduction, experience overview, specific project highlights, and a closing statement. It maintains a professional tone throughout and is mostly grammatically correct. The content logically follows a chronological and thematic order, emphasizing relevant experience and enthusiasm for the role. However, there is some minor repetition (e.g., mentioning \"NLP pipelines\" twice) and slight room for improved conciseness. Overall, it demonstrates good coherence and clarity."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1133,
+            "recall": 0.4474,
+            "matched": [
+              "engineer",
+              "experience",
+              "hiring",
+              "inference",
+              "learning",
+              "machine",
+              "neuralwave",
+              "nlp",
+              "pipelines",
+              "production",
+              "python",
+              "real-time",
+              "recommendation",
+              "services.",
+              "systems",
+              "tools",
+              "years"
+            ],
+            "missed": [
+              "computer",
+              "deploy",
+              "develop",
+              "engineering",
+              "field",
+              "kubeflow",
+              "mlflow",
+              "mlops",
+              "models.",
+              "phd",
+              "plus.",
+              "proficiency",
+              "publication",
+              "pytorch",
+              "record",
+              "related",
+              "requirements",
+              "science",
+              "strong",
+              "tensorflow",
+              "work"
+            ],
+            "score": 0.4474,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 68.15,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_1",
+        "job": "job_edge_minimal",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The generated document largely aligns with the source data, accurately reflecting the candidate's name, contact info, summary, work experience, education, skills, projects, certifications, and awards. The only notable deviation is the addition of the phrase \"Adept at collaborating with cross-functional teams to drive efficiency in talent operations and healthcare analytics, with a focus on data-driven decision making,\" which is not explicitly present in the source. While this statement is consistent with the candidate's background, it is an inference rather than a direct fact from the source. All other details, including job titles, companies, dates, bullet points, skills, and certifications, are faithfully reproduced without fabrication or embellishment. Therefore, the document is highly faithful, with only a minor inference, justifying a score of 9."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The candidate's background includes relevant data skills such as Python, SQL, Tableau, and experience with dashboards and data analysis, which align with the general \"help with data\" requirement. However, the overall content emphasizes broader analytics, product building, and healthcare analytics, with limited focus on core data management, data cleaning, or technical tasks typically associated with a data support role. The work experience and projects are somewhat relevant but are presented in a way that suggests a broader analytics or product focus rather than a specialized data support or technical data role. The relevance to the specific \"help with data\" task is minimal, and the document does not strongly highlight skills or experiences directly tied to data maintenance, troubleshooting, or supporting data infrastructure."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It follows a logical order, presenting recent experience first and including relevant details in each section. The language is grammatically correct, and there is no noticeable repetition or contradiction. Minor improvements could be made in formatting consistency (e.g., bullet points under projects) and elaboration in some areas for clarity, but overall, it demonstrates strong coherence and structure."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0063,
+            "recall": 0.2,
+            "matched": [
+              "data"
+            ],
+            "missed": [
+              "help",
+              "looking",
+              "someone",
+              "stuff."
+            ],
+            "score": 0.2,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Taylor Morgan",
+              "Summary",
+              "Work Experience",
+              "Product Analyst - BrightPath Talent",
+              "Data Analytics Intern - Northstar Health",
+              "Education",
+              "Bachelor of Science in Business Analytics - Georgia State University",
+              "Skills",
+              "Projects",
+              "HireMe AI",
+              "Interview Prep Assistant",
+              "Certifications",
+              "Google Data Analytics Certificate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10\n\nReasoning: The generated document largely adheres to the source data, accurately reflecting the candidate's experience, skills, education, and certifications. It correctly mentions the two work experiences at BrightPath Talent and Northstar Health, including the roles and some of the specific achievements such as reducing review time by 35%, using Python and SQL, creating Tableau dashboards, and documenting KPIs. The skills listed match the source, including Python, SQL, Tableau, Excel, Git, and soft skills like communication and stakeholder management. The education details, including the degree, school, and relevant coursework, are consistent with the source.\n\nHowever, there are some minor issues that slightly reduce the faithfulness score:\n- The phrase \"nearly 2 years of experience\" is an approximation; the source data indicates specific start and end dates that suggest about 1 year and 9 months, which is close but not exactly \"nearly 2 years.\"\n- The cover letter is generic in addressing \"Company Name\" and \"Hiring Manager,\" which is acceptable given the source preferences, but it does not explicitly mention the recipient's name as \"Hiring Manager\" in the source, though this is a minor stylistic choice.\n- The mention of \"support hiring and operations\" aligns with the source, but the phrase \"support hiring\" is inferred from the context rather than explicitly stated.\n- The certification \"Google Data Analytics Certificate\" is correctly included, matching the source.\n\nThere are no invented employers, job titles, companies, metrics, or claims about the candidate that cannot be verified from the source. The overall fidelity is high, with only slight paraphrasing and approximation that do not significantly distort the facts.\n\nTherefore, the score reflects a high level of faithfulness with minor acceptable deviations."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document mentions experience with data analytics, dashboards, SQL, Python, and stakeholder communication, which are relevant skills. However, the overall content is quite generic and does not specifically address the core requirements of the role, which is broadly described as \"help with data stuff.\" There is minimal emphasis on specific data tasks, tools, or responsibilities that directly align with typical data support roles. The experience is somewhat related but lacks targeted keywords or detailed examples that demonstrate the candidate\u2019s ability to perform the specific \"data stuff\" the job entails."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, including an introduction, experience, skills, motivation, and closing. It maintains a professional tone throughout and is mostly grammatically correct. The chronological order of experience is logical, highlighting recent roles first. However, there is some repetition of the phrase \"nearly 2 years of experience,\" which slightly affects flow. Overall, it is coherent and effectively communicates the candidate's qualifications, but minor improvements in avoiding repetition and enhancing transitions could elevate clarity further."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0074,
+            "recall": 0.2,
+            "matched": [
+              "data"
+            ],
+            "missed": [
+              "help",
+              "looking",
+              "someone",
+              "stuff."
+            ],
+            "score": 0.2,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 80.07,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_1",
+        "job": "job_edge_very_long",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10\n\nReasoning: The generated document largely aligns with the source data, accurately reflecting the candidate's name, contact information, summary, work experience, education, skills, projects, certifications, and awards as provided. The work experience details, including job titles, companies, dates, and bullet points, are consistent with the source. The education details, including degree, school, dates, and coursework, match the source data.\n\nHowever, there are a few notable deviations:\n- The summary in the generated text includes an additional statement about \"Seeking a Full Stack Developer role to contribute to end-to-end feature development, design system collaboration, and production-ready applications,\" which is not present in the source data. This appears to be an invented career goal or role aspiration.\n- The phrase \"Proven ability to partner with cross-functional teams to define metrics and drive insights\" is an inferred summary addition not explicitly in the source.\n- The formatting of the contact info and section headers is slightly different but does not affect factual accuracy.\n- The rest of the content, including skills, projects, certifications, and awards, accurately reflects the source data without fabrications or hallucinations.\n\nOverall, the core factual content is faithful to the source, with only minor added interpretations in the summary and career focus, which slightly reduce the score."
+          },
+          "relevance": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document primarily presents a candidate with experience in data analysis, dashboards, and AI-related projects, which do not align with the core requirements of a Full Stack Developer role at MegaCorp. It lacks mention of relevant technical skills such as JavaScript, TypeScript, React, Node.js, PostgreSQL, RESTful API design, web security practices, testing frameworks, or experience with containerization and cloud deployment. The work experience and skills focus on data analytics and AI projects rather than full-stack development, making it largely irrelevant to the specified job description."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It follows a logical order, presenting recent experience first and including relevant details in each section. The language is grammatically correct, and there is no noticeable repetition or contradiction. Minor improvements could be made in formatting consistency (e.g., bullet points under projects) and perhaps elaborating slightly more on some achievements for clarity. Overall, it demonstrates good coherence and structure."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0556,
+            "recall": 0.119,
+            "matched": [
+              "contribute",
+              "design",
+              "developer",
+              "development",
+              "end-to-end",
+              "engineers",
+              "experience",
+              "full",
+              "internal",
+              "seeking",
+              "skills",
+              "stack",
+              "tools",
+              "using",
+              "work"
+            ],
+            "missed": [
+              "accessibility",
+              "actions",
+              "agile",
+              "api",
+              "applications",
+              "apply.",
+              "architecture",
+              "austin.",
+              "aws",
+              "azure",
+              "backgrounds",
+              "best",
+              "blog",
+              "building",
+              "candidates",
+              "cloud",
+              "code",
+              "committed",
+              "competitive",
+              "comprehensive",
+              "concept",
+              "containerization",
+              "culture",
+              "customer-facing",
+              "cypress",
+              "databases",
+              "datadog",
+              "datadog.",
+              "deployment",
+              "docker",
+              "documentation",
+              "emphasizes",
+              "encourage",
+              "engineering",
+              "enterprise",
+              "environment",
+              "equity",
+              "express",
+              "familiarity",
+              "features",
+              "frameworks",
+              "francisco",
+              "full-stack",
+              "github",
+              "graphql",
+              "hybrid",
+              "includes",
+              "inclusive",
+              "international",
+              "involves",
+              "javascript",
+              "jest",
+              "join",
+              "knowledge",
+              "kubernetes",
+              "megacorp",
+              "model",
+              "monitoring",
+              "new",
+              "next.js",
+              "nice",
+              "node.js",
+              "observability",
+              "offer",
+              "offices",
+              "optimization",
+              "owasp",
+              "own",
+              "participate",
+              "performance",
+              "platform",
+              "postgresql",
+              "postgresql.",
+              "posts.",
+              "practices",
+              "production.",
+              "pto",
+              "quality",
+              "react",
+              "redis",
+              "relational",
+              "relic",
+              "requirements",
+              "restful",
+              "reviews",
+              "salary",
+              "san",
+              "security",
+              "sharing",
+              "sprints",
+              "standards",
+              "strong",
+              "system.",
+              "talks",
+              "team.",
+              "tech",
+              "terraform",
+              "testing",
+              "thorough",
+              "through",
+              "top",
+              "two-week",
+              "typescript",
+              "understanding",
+              "unlimited",
+              "value",
+              "wcag",
+              "web",
+              "workplace",
+              "years",
+              "york"
+            ],
+            "score": 0.119,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Taylor Morgan",
+              "Summary",
+              "Work Experience",
+              "Product Analyst - BrightPath Talent",
+              "Data Analytics Intern - Northstar Health",
+              "Education",
+              "Bachelor of Science in Business Analytics - Georgia State University",
+              "Skills",
+              "Projects",
+              "HireMe AI",
+              "Interview Prep Assistant",
+              "Certifications",
+              "Google Data Analytics Certificate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The generated document contains multiple inaccuracies and fabrications not supported by the source data. It incorrectly states that the candidate is applying for a \"Full Stack Developer\" position at \"MegaCorp International,\" whereas the source data indicates the candidate's name is Taylor Morgan, with experience as a Product Analyst and Data Analytics Intern, and no mention of a full-stack development role or the company MegaCorp International. The cover letter references \"two years of experience,\" but the source data shows work experience starting in January 2024 and ongoing, which is less than two full years. Additionally, the letter discusses \"building reporting dashboards that reduced review time by 35%\"\u2014this is consistent with the source, but the context of applying for a different role and company is fabricated. The rest of the content, including skills, projects, and certifications, aligns with the source, but the core details about the position, company, and applicant's intent are invented. Therefore, the score reflects significant hallucination regarding the job application context and employer."
+          },
+          "relevance": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document primarily discusses experience as a data analyst and AI product builder, with no mention of full-stack development skills, JavaScript/TypeScript, React, Node.js, PostgreSQL, RESTful APIs, or related technical expertise specified in the job description. It lacks relevant work experience bullets, technical skills, or examples demonstrating the candidate\u2019s ability to fulfill the core requirements of the Full Stack Developer role. The content is largely unrelated to the key responsibilities and skills outlined, resulting in minimal relevance to the target position."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It logically presents the candidate\u2019s background, relevant experience, and motivation for applying, aligning with the job and company values. The language is grammatically correct, and there is no noticeable repetition or contradiction. However, the letter could benefit from slightly more specific examples of technical skills or projects directly related to full-stack development to strengthen its relevance. Overall, it is coherent, professional, and logically ordered, but with room for more targeted technical detail."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.2105,
+            "recall": 0.3492,
+            "matched": [
+              "applications",
+              "architecture",
+              "blog",
+              "building",
+              "code",
+              "comprehensive",
+              "concept",
+              "contribute",
+              "customer-facing",
+              "design",
+              "developer",
+              "development",
+              "documentation",
+              "end-to-end",
+              "engineers",
+              "enterprise",
+              "experience",
+              "express",
+              "features",
+              "francisco",
+              "full",
+              "inclusive",
+              "internal",
+              "international",
+              "knowledge",
+              "megacorp",
+              "participate",
+              "performance",
+              "platform",
+              "posts.",
+              "production.",
+              "quality",
+              "reviews",
+              "san",
+              "sharing",
+              "stack",
+              "system.",
+              "talks",
+              "tech",
+              "thorough",
+              "through",
+              "tools",
+              "workplace",
+              "years"
+            ],
+            "missed": [
+              "accessibility",
+              "actions",
+              "agile",
+              "api",
+              "apply.",
+              "austin.",
+              "aws",
+              "azure",
+              "backgrounds",
+              "best",
+              "candidates",
+              "cloud",
+              "committed",
+              "competitive",
+              "containerization",
+              "culture",
+              "cypress",
+              "databases",
+              "datadog",
+              "datadog.",
+              "deployment",
+              "docker",
+              "emphasizes",
+              "encourage",
+              "engineering",
+              "environment",
+              "equity",
+              "familiarity",
+              "frameworks",
+              "full-stack",
+              "github",
+              "graphql",
+              "hybrid",
+              "includes",
+              "involves",
+              "javascript",
+              "jest",
+              "join",
+              "kubernetes",
+              "model",
+              "monitoring",
+              "new",
+              "next.js",
+              "nice",
+              "node.js",
+              "observability",
+              "offer",
+              "offices",
+              "optimization",
+              "owasp",
+              "own",
+              "postgresql",
+              "postgresql.",
+              "practices",
+              "pto",
+              "react",
+              "redis",
+              "relational",
+              "relic",
+              "requirements",
+              "restful",
+              "salary",
+              "security",
+              "seeking",
+              "skills",
+              "sprints",
+              "standards",
+              "strong",
+              "team.",
+              "terraform",
+              "testing",
+              "top",
+              "two-week",
+              "typescript",
+              "understanding",
+              "unlimited",
+              "using",
+              "value",
+              "wcag",
+              "web",
+              "work",
+              "york"
+            ],
+            "score": 0.3492,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 92.27,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_2",
+        "job": "job_data_analyst",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The generated document accurately reflects all facts explicitly present in the source data. It correctly states the candidate's name, contact information, summary, work experience (job titles, companies, dates, and achievements), education details, skills, projects, certifications, and awards as provided. The only minor point deduction is for the phrase \"analytics-ready features\" in the summary, which is not explicitly in the source but can be inferred as consistent with the candidate's experience; however, since it is an interpretation rather than a direct fact, it slightly affects the faithfulness. Overall, the content is highly faithful to the source data, with no invented entities or fabricated metrics."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The candidate demonstrates strong technical skills in SQL and Python, and mentions building dashboards and working with cross-functional teams, which align with some aspects of the Data Analyst role. However, the overall experience is primarily in software engineering rather than dedicated data analysis, with limited emphasis on exploratory data analysis, presenting findings to leadership, or working specifically with tools like Tableau or Power BI. The work experience focuses more on API development, system architecture, and software engineering projects rather than data visualization, dashboard creation, or direct stakeholder communication related to data insights. Additionally, there is no mention of experience with cloud data warehouses, machine learning, or specific data analysis methodologies, which are considered \"nice to have\" in the role. Overall, the relevance to the specific job requirements is moderate but not strong enough for a higher score."
+          },
+          "coherence": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It follows a logical order, presenting recent work experience first, then education, skills, projects, certifications, and achievements. The language is grammatically correct, and there is no noticeable repetition or contradiction. Minor improvements could include more consistent formatting (e.g., bullet points under Projects and Awards) for perfect uniformity, but overall, the coherence is strong."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0894,
+            "recall": 0.3333,
+            "matched": [
+              "actionable",
+              "bachelor",
+              "building",
+              "cross-functional",
+              "dashboards",
+              "data",
+              "experience",
+              "findings",
+              "leadership.",
+              "python",
+              "raw",
+              "sql",
+              "strong",
+              "work",
+              "writing",
+              "years"
+            ],
+            "missed": [
+              "analysis",
+              "analyst",
+              "bigquery",
+              "cloud",
+              "communication",
+              "degree",
+              "exploratory",
+              "familiarity",
+              "field",
+              "growing",
+              "include",
+              "insights.",
+              "join",
+              "learning",
+              "looking",
+              "machine",
+              "nice",
+              "performing",
+              "power",
+              "presenting",
+              "proficiency",
+              "quantitative",
+              "queries",
+              "requirements",
+              "responsibilities",
+              "skills.",
+              "snowflake",
+              "stakeholders",
+              "tableau",
+              "team.",
+              "turn",
+              "warehouses"
+            ],
+            "score": 0.3333,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Jordan Lee",
+              "Summary",
+              "Work Experience",
+              "Software Engineer II - Cloudway Inc.",
+              "Software Engineer I - DataBridge Solutions",
+              "Education",
+              "Bachelor of Science in Computer Science - New York University",
+              "Skills",
+              "Projects",
+              "DevPortal",
+              "Certifications",
+              "AWS Solutions Architect Associate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10\n\nReasoning:  \nThe generated document contains several inaccuracies and fabrications that reduce its faithfulness to the source data. It incorrectly states that Jordan Lee is applying for a Data Analyst position, whereas the source indicates a full-stack software engineer with experience in building scalable web applications. The cover letter references skills and experiences (e.g., data analysis, dashboards, turning data into insights) that are not explicitly present in the source; these are inferred or fabricated. Additionally, the company name \"Acme Analytics\" and the recipient \"N/A\" are not from the source, and the date \"March 31, 2026\" is not provided in the source data. The mention of \"data-heavy workflows\" and \"dashboards\" is not supported by the source, and the overall tone and content are more aligned with a data analyst role rather than a software engineering position. The core facts about Jordan Lee's work experience, education, skills, and certifications are accurate, but the narrative and role-specific details are not faithful to the source."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document emphasizes experience with data-heavy workflows, SQL, and dashboard development, which are relevant to the Data Analyst role. However, it primarily highlights software engineering and full-stack development rather than direct data analysis skills such as building dashboards with Tableau or Power BI, performing exploratory data analysis, or writing SQL queries in a data context. The experience with Python is mentioned but not specifically tied to data analysis or machine learning, which are \"nice to have\" skills. Additionally, work experience is framed around software engineering projects rather than roles focused on turning raw data into insights for stakeholders. Overall, the relevance to the specific job requirements is limited, leading to a moderate score."
+          },
+          "coherence": {
+            "score": 7.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 7/10  \nReasoning: The document is generally well-organized, with a clear introduction, body, and closing. It maintains a professional tone and is grammatically correct throughout. The candidate effectively highlights relevant experience and skills, and the letter is logically ordered, emphasizing recent experience first. However, there are some areas for improvement: the repetition of the 4-year experience detail could be condensed, and the letter could benefit from more specific examples directly related to the Data Analyst role rather than software engineering achievements. Additionally, the structure could be slightly more distinct with clearer section headings or transitions to enhance readability. Overall, it is coherent but could be refined for greater clarity and focus."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1181,
+            "recall": 0.3125,
+            "matched": [
+              "actionable",
+              "analysis",
+              "analyst",
+              "cross-functional",
+              "dashboards",
+              "data",
+              "experience",
+              "findings",
+              "leadership.",
+              "presenting",
+              "python",
+              "raw",
+              "sql",
+              "writing",
+              "years"
+            ],
+            "missed": [
+              "bachelor",
+              "bigquery",
+              "building",
+              "cloud",
+              "communication",
+              "degree",
+              "exploratory",
+              "familiarity",
+              "field",
+              "growing",
+              "include",
+              "insights.",
+              "join",
+              "learning",
+              "looking",
+              "machine",
+              "nice",
+              "performing",
+              "power",
+              "proficiency",
+              "quantitative",
+              "queries",
+              "requirements",
+              "responsibilities",
+              "skills.",
+              "snowflake",
+              "stakeholders",
+              "strong",
+              "tableau",
+              "team.",
+              "turn",
+              "warehouses",
+              "work"
+            ],
+            "score": 0.3125,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 103.74,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_2",
+        "job": "job_swe_senior",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 10.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 10/10  \nReasoning: The generated document accurately reflects all facts explicitly present in the source data. It correctly lists the candidate's name, contact information, summary, work experience (including job titles, companies, dates, and achievements), education details, skills, projects, certifications, and awards exactly as provided. There are no invented entities, fabricated metrics, or unverified claims. The additional details such as the candidate's intent to apply for a Senior Software Engineer role and the phrasing are consistent with the source, and no information is added that isn't supported by the source data."
+          },
+          "relevance": {
+            "score": 6.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 6/10  \nReasoning: The candidate has relevant experience with microservices migration, CI/CD automation, and cloud technologies like AWS and Kubernetes, which align with the job requirements. They mention proficiency in Python and Java, and experience with distributed systems and cloud infrastructure. However, the experience is slightly under the 5+ years threshold, and the emphasis on specific skills such as designing scalable backend systems, microservices architecture, and mentoring at a senior level is limited. The work experience bullets are somewhat generic and do not explicitly highlight leadership or architectural decision-making at a senior level. Additionally, familiarity with GCP, event-driven architectures, and GraphQL is present but not deeply emphasized. Overall, the document addresses many key skills but could better showcase senior-level responsibilities and specific technical expertise outlined in the role."
+          },
+          "coherence": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It presents information logically, with recent experience listed first, and avoids repetition or contradictions. The grammar is correct, and the formatting enhances readability. Minor improvements could include more consistent formatting (e.g., bullet points under awards) or elaboration in some sections, but overall, it demonstrates high coherence and clarity."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1018,
+            "recall": 0.4359,
+            "matched": [
+              "architect",
+              "aws",
+              "backend",
+              "design",
+              "engineer",
+              "experience",
+              "java",
+              "junior",
+              "kubernetes",
+              "microservices",
+              "python",
+              "scalable",
+              "senior",
+              "software",
+              "techforward",
+              "technical",
+              "years"
+            ],
+            "missed": [
+              "architectures",
+              "bonus",
+              "build",
+              "cloud",
+              "decisions.",
+              "developers",
+              "distributed",
+              "drive",
+              "engineering",
+              "event-driven",
+              "familiarity",
+              "gcp",
+              "graphql.",
+              "infrastructure",
+              "mentor",
+              "pipelines.",
+              "proficiency",
+              "requirements",
+              "seeking",
+              "strong",
+              "systems",
+              "systems."
+            ],
+            "score": 0.4359,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Jordan Lee",
+              "Summary",
+              "Work Experience",
+              "Software Engineer II - Cloudway Inc.",
+              "Software Engineer I - DataBridge Solutions",
+              "Education",
+              "Bachelor of Science in Computer Science - New York University",
+              "Skills",
+              "Projects",
+              "DevPortal",
+              "Certifications",
+              "AWS Solutions Architect Associate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The generated document accurately reflects the information provided in the source data regarding Jordan Lee's name, contact details, summary, work experience (including job titles, companies, dates, and specific achievements), education, skills, projects, certifications, and awards. The only notable deviation is the inclusion of the date \"March 31, 2026,\" which is not present in the source data and appears to be an invented date, and the mention of \"faster deployments\" which, while consistent with the candidate's experience, is a slightly interpretive phrase not explicitly stated in the source. Overall, the content is faithful to the source data, with no fabricated facts or unsupported claims."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document mentions experience with microservices, scalable systems, CI/CD, and some relevant tools like Kafka and WebSockets, which align with the role's focus on scalable backend systems and distributed architectures. However, it falls short in several key areas: it does not specify proficiency in Python or Java, lacks mention of cloud infrastructure (AWS/GCP), and does not reference experience with Kubernetes, event-driven architectures, or GraphQL\u2014important bonus skills. Additionally, the candidate has 4 years of experience, whereas the role requires 5+ years. Overall, the content addresses some relevant skills but does not sufficiently emphasize the core requirements or bonus qualifications of the role."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, including an introduction, body paragraphs detailing experience, and a closing statement. It maintains a professional tone throughout and is grammatically correct. The content is logically ordered, highlighting recent and relevant experience first, and the repetition is minimal. However, there is some slight redundancy in mentioning the focus on scalable backend systems twice, which could be streamlined for better clarity. Overall, it demonstrates good coherence but could benefit from minor refinements to enhance flow and conciseness."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.121,
+            "recall": 0.3846,
+            "matched": [
+              "backend",
+              "developers",
+              "distributed",
+              "engineer",
+              "engineering",
+              "experience",
+              "junior",
+              "microservices",
+              "scalable",
+              "senior",
+              "software",
+              "systems",
+              "techforward",
+              "technical",
+              "years"
+            ],
+            "missed": [
+              "architect",
+              "architectures",
+              "aws",
+              "bonus",
+              "build",
+              "cloud",
+              "decisions.",
+              "design",
+              "drive",
+              "event-driven",
+              "familiarity",
+              "gcp",
+              "graphql.",
+              "infrastructure",
+              "java",
+              "kubernetes",
+              "mentor",
+              "pipelines.",
+              "proficiency",
+              "python",
+              "requirements",
+              "seeking",
+              "strong",
+              "systems."
+            ],
+            "score": 0.3846,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 74.73,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_2",
+        "job": "job_ml_engineer",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10\n\nReasoning: The generated document accurately reflects all facts explicitly present in the source data. It correctly lists the candidate's name, contact information, summary, work experience with correct job titles, companies, dates, and achievements, as well as education details, skills, projects, certifications, and awards. The only minor point deduction is for the phrase \"delivering scalable web applications and production systems\" in the summary, which is a paraphrase not explicitly stated in the source (\"building scalable web applications\" is in the source, but \"and production systems\" is an addition). Additionally, the mention of \"interested in applying to NeuralWave's Machine Learning Engineer role\" and the detailed elaboration on the project impact (\"Adoption by 200+ engineers demonstrates broad reach and impact on developer workflows\") are not explicitly in the source data, constituting slight hallucinations. Overall, the content is highly faithful to the source, with only small inferred or elaborated details."
+          },
+          "relevance": {
+            "score": 3.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 3/10  \nReasoning: The candidate's background is primarily in full-stack software engineering with experience in Python, real-time data processing, and cloud tools, which are relevant to some aspects of ML engineering. However, the document lacks specific mention of NLP pipelines, recommendation systems, or real-time inference services, which are core to the NeuralWave role. There is no evidence of experience with MLOps tools like MLflow or Kubeflow, nor any mention of advanced ML frameworks such as PyTorch or TensorFlow. The work experience and projects focus more on general software development, API design, and data processing rather than specialized ML model development or deployment. Overall, the relevance to the specific job requirements is minimal."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It presents information logically, with recent experience listed first, and avoids repetition or contradictions. The grammar is correct, and the content flows smoothly. Minor improvements could include more consistent formatting (e.g., bullet points under Projects) and slight elaboration in some sections for clarity. Overall, it effectively communicates the candidate's background in a coherent manner."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1173,
+            "recall": 0.5526,
+            "matched": [
+              "computer",
+              "deploy",
+              "engineer",
+              "experience",
+              "inference",
+              "learning",
+              "machine",
+              "neuralwave",
+              "nlp",
+              "pipelines",
+              "production",
+              "python",
+              "real-time",
+              "recommendation",
+              "record",
+              "science",
+              "strong",
+              "systems",
+              "tools",
+              "work",
+              "years"
+            ],
+            "missed": [
+              "develop",
+              "engineering",
+              "field",
+              "hiring",
+              "kubeflow",
+              "mlflow",
+              "mlops",
+              "models.",
+              "phd",
+              "plus.",
+              "proficiency",
+              "publication",
+              "pytorch",
+              "related",
+              "requirements",
+              "services.",
+              "tensorflow"
+            ],
+            "score": 0.5526,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Jordan Lee",
+              "Summary",
+              "Work Experience",
+              "Software Engineer II - Cloudway Inc.",
+              "Software Engineer I - DataBridge Solutions",
+              "Education",
+              "Bachelor of Science in Computer Science - New York University",
+              "Skills",
+              "Projects",
+              "DevPortal",
+              "Certifications",
+              "AWS Solutions Architect Associate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The generated document accurately reflects many facts from the source data, including the candidate's name, contact information, summary, work experience (job titles, companies, dates, and specific achievements), education, skills, projects, and certifications. The mention of leading migration at Cloudway Inc., building a real-time notification system, mentoring junior engineers, and the DevPortal project are all consistent with the source. The certification \"AWS Solutions Architect Associate\" is correctly included.  \n\nHowever, the document introduces some information not explicitly present in the source, such as the specific focus on \"production ML pipelines, NLP workflows, and real-time inference services,\" and the detailed emphasis on \"ML deployment workflows and MLOps practices.\" While these are plausible extensions of the candidate's skills and experience, they are not explicitly stated in the source data. Additionally, the letter's tone and structure are consistent with a professional cover letter but involve some inferred context about the role and company that are not directly sourced.\n\nOverall, the core facts are faithful to the source, with minor inferences that slightly extend beyond the explicit data. Therefore, a high score of 8 is appropriate."
+          },
+          "relevance": {
+            "score": 3.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 3/10  \nReasoning: The document emphasizes software engineering skills, CI/CD, microservices, and cloud experience, which are relevant to deploying ML models, but it lacks specific mention of machine learning expertise, NLP, recommendation systems, or real-time inference services. It does not highlight proficiency in Python ML frameworks like PyTorch or TensorFlow, nor MLOps tools such as MLflow or Kubeflow, which are key requirements. The experience described is more general software engineering rather than targeted ML engineering, resulting in a low relevance score for the specific role."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It presents relevant experience in a logical order, highlighting key achievements and skills that align with the role. The language is grammatically correct, and there is no noticeable repetition or contradiction. However, some minor improvements could be made to enhance clarity and conciseness, such as reducing redundancy in describing experience and avoiding slightly repetitive phrases about contributing to NeuralWave\u2019s platform. Overall, it is a coherent and effective cover letter."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1258,
+            "recall": 0.5,
+            "matched": [
+              "deploy",
+              "engineer",
+              "engineering",
+              "experience",
+              "hiring",
+              "inference",
+              "learning",
+              "machine",
+              "mlops",
+              "neuralwave",
+              "nlp",
+              "pipelines",
+              "production",
+              "python",
+              "real-time",
+              "recommendation",
+              "services.",
+              "systems",
+              "years"
+            ],
+            "missed": [
+              "computer",
+              "develop",
+              "field",
+              "kubeflow",
+              "mlflow",
+              "models.",
+              "phd",
+              "plus.",
+              "proficiency",
+              "publication",
+              "pytorch",
+              "record",
+              "related",
+              "requirements",
+              "science",
+              "strong",
+              "tensorflow",
+              "tools",
+              "work"
+            ],
+            "score": 0.5,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 100.58,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_2",
+        "job": "job_edge_minimal",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10\n\nReasoning: The generated document accurately reflects all facts explicitly present in the source data. It correctly lists the candidate's name, contact information, and summary details about experience and passions. The work experience entries match the job titles, companies, dates, and achievements as provided, including the specific reductions, event handling capacities, and mentorship details. Education details, including degree, school, dates, minor, and Dean's List, are correctly included. Skills, tools, soft skills, projects, certifications, and awards are all consistent with the source data.\n\nThe only minor point is that the generated text adds some slightly expanded language (e.g., \"building scalable web applications and data-intensive systems\" and \"Strong in data processing, real-time event handling, API design, and CI/CD automation\") that, while plausible and aligned with the source, are not explicitly stated in the source data. However, these are reasonable interpretations and do not introduce false facts.\n\nOverall, the document contains only facts explicitly present in the source data, with no invented entities or fabricated metrics. Therefore, a high score of 9 is appropriate, with a slight deduction for the minor interpretive expansion."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The candidate's background as a full-stack software engineer with experience in data processing, APIs, and real-time systems is relevant to some extent. However, the job description is very broad (\"help with data stuff\") and does not specify particular skills or responsibilities. The generated document emphasizes software development, system architecture, and cloud tools, but lacks explicit mention of core data-related skills such as data analysis, data management, database administration, or data engineering tasks. The experience and skills are somewhat aligned but not directly targeted toward typical data-focused roles, resulting in a moderate relevance score."
+          },
+          "coherence": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It presents information logically, with most recent experience listed first, and avoids repetition or contradictions. The language is grammatically correct, and the formatting enhances readability. Minor improvements could include more consistent formatting in the Projects section (e.g., bullet points vs. paragraphs) for perfect uniformity, but overall, it is highly coherent and effective."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0065,
+            "recall": 0.2,
+            "matched": [
+              "data"
+            ],
+            "missed": [
+              "help",
+              "looking",
+              "someone",
+              "stuff."
+            ],
+            "score": 0.2,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Jordan Lee",
+              "Summary",
+              "Work Experience",
+              "Software Engineer II - Cloudway Inc.",
+              "Software Engineer I - DataBridge Solutions",
+              "Education",
+              "Bachelor of Science in Computer Science - New York University",
+              "Skills",
+              "Projects",
+              "DevPortal",
+              "Certifications",
+              "AWS Solutions Architect Associate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10\n\nReasoning:  \nThe generated document largely contains facts explicitly present in the source data, such as the candidate's name, contact information, summary, work experience (job titles, companies, dates, and achievements), education, skills, projects, certifications, and awards. The descriptions of work at Cloudway Inc. and DataBridge Solutions match the source data, including specific achievements and technologies used.\n\nHowever, there are some minor issues:  \n- The date at the top is \"March 31, 2026,\" which is not provided in the source data and appears to be a fabricated date.  \n- The letter refers to the position as \"Data Engineer,\" which is not specified in the source; the candidate's summary describes a full-stack software engineer, and no mention of a Data Engineer role is in the source data.  \n- The phrase \"I have led key data-related improvements\" is a slight interpretive addition, as the source mentions leading migration and building systems but does not explicitly state \"data-related improvements.\"  \n- The phrase \"helping to build scalable data pipelines and services\" is an inferred goal aligned with the candidate's skills but not explicitly stated in the source.\n\nOverall, the core facts are accurate and directly supported, with only minor inferences and one fabricated date. Therefore, the score reflects high fidelity with slight deductions for the date and role mismatch."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document emphasizes software engineering skills, including API development, microservices, real-time systems, and cloud experience, which are relevant to data roles. However, it lacks specific mention of core data-specific skills such as data pipeline construction, database management, data modeling, ETL processes, or analytics. The experience is framed more around general software development and infrastructure rather than targeted data work, making it only partially relevant to a \"data stuff\" role."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, including an introduction, experience highlights, and a closing statement. It maintains a professional tone throughout and presents information in a logical order, emphasizing recent experience first. The language is grammatically correct, and there is no noticeable repetition or contradiction. However, minor improvements could be made in explicitly separating different roles or projects for even clearer organization. Overall, it is a coherent and effective cover letter."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0081,
+            "recall": 0.2,
+            "matched": [
+              "data"
+            ],
+            "missed": [
+              "help",
+              "looking",
+              "someone",
+              "stuff."
+            ],
+            "score": 0.2,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 59.32,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_2",
+        "job": "job_edge_very_long",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The generated document accurately reflects all facts explicitly present in the source data. It correctly states the candidate's name, contact information, summary, work experience (including job titles, companies, dates, and achievements), education details, skills, projects, certifications, and awards as provided. The only minor deviation is the addition of the phrase \"Proficient in JavaScript/TypeScript with hands-on work on React-based frontends and RESTful backends\" in the summary, which is not explicitly stated in the source data. However, since the source mentions React and TypeScript in the context of the admin dashboard, this is a reasonable inference and not a fabricated fact. No invented employers, job titles, companies, metrics, certifications, or unverified claims are present. Therefore, the document is highly faithful to the source data, warranting a score of 9."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document demonstrates some relevant full-stack experience, including proficiency in JavaScript/TypeScript, React, REST APIs, and tools like Docker and AWS, which align with the job requirements. However, it lacks specific mention of Node.js, PostgreSQL, web security practices (OWASP), testing frameworks like Jest or Cypress, and other key technologies such as Next.js, container orchestration (Kubernetes), or cloud deployment specifics. The work experience is somewhat generic and does not clearly emphasize ownership of features from concept to production or participation in architecture reviews, which are important for this role. Overall, it touches on relevant skills but does not sufficiently highlight the core technical requirements or the depth of experience needed for the position."
+          },
+          "coherence": {
+            "score": 9.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 9/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It is grammatically correct and free of repetition or contradictions. The experience is logically ordered, with most recent roles listed first. Minor improvements could be made in formatting consistency (e.g., bullet points under Projects and Awards) for even better clarity, but overall, it demonstrates high coherence and readability."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": true,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.125,
+            "recall": 0.246,
+            "matched": [
+              "actions",
+              "api",
+              "aws",
+              "building",
+              "code",
+              "datadog.",
+              "developer",
+              "docker",
+              "engineers",
+              "experience",
+              "full-stack",
+              "github",
+              "graphql",
+              "internal",
+              "javascript",
+              "kubernetes",
+              "new",
+              "react",
+              "restful",
+              "reviews",
+              "skills",
+              "terraform",
+              "testing",
+              "through",
+              "tools",
+              "typescript",
+              "using",
+              "web",
+              "work",
+              "years",
+              "york"
+            ],
+            "missed": [
+              "accessibility",
+              "agile",
+              "applications",
+              "apply.",
+              "architecture",
+              "austin.",
+              "azure",
+              "backgrounds",
+              "best",
+              "blog",
+              "candidates",
+              "cloud",
+              "committed",
+              "competitive",
+              "comprehensive",
+              "concept",
+              "containerization",
+              "contribute",
+              "culture",
+              "customer-facing",
+              "cypress",
+              "databases",
+              "datadog",
+              "deployment",
+              "design",
+              "development",
+              "documentation",
+              "emphasizes",
+              "encourage",
+              "end-to-end",
+              "engineering",
+              "enterprise",
+              "environment",
+              "equity",
+              "express",
+              "familiarity",
+              "features",
+              "frameworks",
+              "francisco",
+              "full",
+              "hybrid",
+              "includes",
+              "inclusive",
+              "international",
+              "involves",
+              "jest",
+              "join",
+              "knowledge",
+              "megacorp",
+              "model",
+              "monitoring",
+              "next.js",
+              "nice",
+              "node.js",
+              "observability",
+              "offer",
+              "offices",
+              "optimization",
+              "owasp",
+              "own",
+              "participate",
+              "performance",
+              "platform",
+              "postgresql",
+              "postgresql.",
+              "posts.",
+              "practices",
+              "production.",
+              "pto",
+              "quality",
+              "redis",
+              "relational",
+              "relic",
+              "requirements",
+              "salary",
+              "san",
+              "security",
+              "seeking",
+              "sharing",
+              "sprints",
+              "stack",
+              "standards",
+              "strong",
+              "system.",
+              "talks",
+              "team.",
+              "tech",
+              "thorough",
+              "top",
+              "two-week",
+              "understanding",
+              "unlimited",
+              "value",
+              "wcag",
+              "workplace"
+            ],
+            "score": 0.246,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "Jordan Lee",
+              "Summary",
+              "Work Experience",
+              "Software Engineer II - Cloudway Inc.",
+              "Software Engineer I - DataBridge Solutions",
+              "Education",
+              "Bachelor of Science in Computer Science - New York University",
+              "Skills",
+              "Projects",
+              "DevPortal",
+              "Certifications",
+              "AWS Solutions Architect Associate",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The generated document accurately reflects the facts provided in the source data, including the candidate's name, contact information, summary, work experience (job titles, companies, dates, and achievements), education, skills, projects, certifications, and awards. It does not introduce any invented employers, job titles, companies, metrics, percentages, or certifications. The only minor deduction is that the date \"[March 31, 2026]\" is not specified in the source data, but since the date is not explicitly contradicted or fabricated as a specific fact about the candidate, it can be considered a plausible placeholder or a stylistic choice rather than a hallucination. Overall, the content is faithful to the source data, with no fabricated information or unsupported claims."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The generated document demonstrates some relevant experience in full-stack development, such as building scalable web applications, working with APIs, microservices, and real-time systems, which align with the role's technical requirements. However, it lacks explicit mention of key skills and technologies specified in the job description, such as React, Node.js, PostgreSQL, TypeScript, RESTful API design, web security practices, testing frameworks (Jest, Cypress), and familiarity with cloud/containerization tools like Docker or AWS. The content is somewhat generic and does not emphasize the candidate\u2019s direct experience with the specific tech stack or agile practices mentioned. Overall, it addresses some relevant skills but does not sufficiently highlight the core qualifications or tailor the experience to the specific responsibilities and technologies of the role."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, including an introduction, body paragraphs detailing experience and motivation, and a closing statement. It maintains a professional tone throughout and is mostly grammatically correct. The content flows logically, highlighting relevant experience and aligning personal values with company culture. However, there are minor issues such as slight repetition (\"I also\" appears twice in close succession) and a few awkward phrasings (\"bring strengths in Mentorship, Cross-functional collaboration, and Technical writing\" could be more smoothly integrated). Overall, it is coherent, structured, and effective, but could benefit from slight polishing for clarity and conciseness."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1961,
+            "recall": 0.3175,
+            "matched": [
+              "api",
+              "applications",
+              "building",
+              "code",
+              "concept",
+              "contribute",
+              "design",
+              "developer",
+              "development",
+              "end-to-end",
+              "engineering",
+              "engineers",
+              "enterprise",
+              "experience",
+              "express",
+              "features",
+              "full",
+              "full-stack",
+              "inclusive",
+              "international",
+              "knowledge",
+              "megacorp",
+              "new",
+              "own",
+              "platform",
+              "quality",
+              "restful",
+              "reviews",
+              "sharing",
+              "skills",
+              "stack",
+              "strong",
+              "team.",
+              "thorough",
+              "through",
+              "using",
+              "web",
+              "workplace",
+              "years",
+              "york"
+            ],
+            "missed": [
+              "accessibility",
+              "actions",
+              "agile",
+              "apply.",
+              "architecture",
+              "austin.",
+              "aws",
+              "azure",
+              "backgrounds",
+              "best",
+              "blog",
+              "candidates",
+              "cloud",
+              "committed",
+              "competitive",
+              "comprehensive",
+              "containerization",
+              "culture",
+              "customer-facing",
+              "cypress",
+              "databases",
+              "datadog",
+              "datadog.",
+              "deployment",
+              "docker",
+              "documentation",
+              "emphasizes",
+              "encourage",
+              "environment",
+              "equity",
+              "familiarity",
+              "frameworks",
+              "francisco",
+              "github",
+              "graphql",
+              "hybrid",
+              "includes",
+              "internal",
+              "involves",
+              "javascript",
+              "jest",
+              "join",
+              "kubernetes",
+              "model",
+              "monitoring",
+              "next.js",
+              "nice",
+              "node.js",
+              "observability",
+              "offer",
+              "offices",
+              "optimization",
+              "owasp",
+              "participate",
+              "performance",
+              "postgresql",
+              "postgresql.",
+              "posts.",
+              "practices",
+              "production.",
+              "pto",
+              "react",
+              "redis",
+              "relational",
+              "relic",
+              "requirements",
+              "salary",
+              "san",
+              "security",
+              "seeking",
+              "sprints",
+              "standards",
+              "system.",
+              "talks",
+              "tech",
+              "terraform",
+              "testing",
+              "tools",
+              "top",
+              "two-week",
+              "typescript",
+              "understanding",
+              "unlimited",
+              "value",
+              "wcag",
+              "work"
+            ],
+            "score": 0.3175,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 57.66,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_edge_empty",
+        "job": "job_data_analyst",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document contains multiple elements that are not supported by the source data. It introduces placeholders such as \"[Name]\", \"[Email]\", \"[Job Title]\", \"[Company]\", \"[Degree]\", \"[School]\", \"[Project Name]\", \"[Certification Name]\", \"[Award Name]\", and \"[Achievement + measurable impact]\" which are not present in the source. Additionally, it lists skills (e.g., Python, SQL, Tableau, Git, AWS, Excel, Communication, Leadership) and project details with specific descriptions and metrics that are not provided in the source data. The only verifiable information from the source is the contact details section (which is empty in the source) and the structure of the resume. Since the rest of the content is fabricated or placeholder text, the fidelity to the source is very low."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The generated document provides a general professional profile with skills and experience sections that mention SQL, Python, Tableau, and communication skills, which are relevant to the Data Analyst role. However, it lacks specific details aligning with the job description, such as experience building dashboards, performing exploratory data analysis, or working with cross-functional stakeholders. The work experience bullets are placeholders rather than tailored achievements, and there is no mention of cloud data warehouses like Snowflake or BigQuery, nor of machine learning experience, which are considered \"nice to have.\" Overall, it addresses some key skills but does not sufficiently emphasize the specific requirements or demonstrate direct relevance to the target role."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, following a logical order (professional summary, work experience, education, skills, projects, certifications, awards). It maintains a professional tone and is generally grammatically correct. However, as a template, it lacks specific content to fully assess coherence in context, and some sections (like the summary and bullets) are placeholders. Overall, it demonstrates good structure and clarity but could improve with more detailed, connected content to enhance flow and specificity."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": false,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 0.8,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0851,
+            "recall": 0.1667,
+            "matched": [
+              "communication",
+              "degree",
+              "experience",
+              "python",
+              "sql",
+              "strong",
+              "tableau",
+              "work"
+            ],
+            "missed": [
+              "actionable",
+              "analysis",
+              "analyst",
+              "bachelor",
+              "bigquery",
+              "building",
+              "cloud",
+              "cross-functional",
+              "dashboards",
+              "data",
+              "exploratory",
+              "familiarity",
+              "field",
+              "findings",
+              "growing",
+              "include",
+              "insights.",
+              "join",
+              "leadership.",
+              "learning",
+              "looking",
+              "machine",
+              "nice",
+              "performing",
+              "power",
+              "presenting",
+              "proficiency",
+              "quantitative",
+              "queries",
+              "raw",
+              "requirements",
+              "responsibilities",
+              "skills.",
+              "snowflake",
+              "stakeholders",
+              "team.",
+              "turn",
+              "warehouses",
+              "writing",
+              "years"
+            ],
+            "score": 0.1667,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document contains minimal factual content from the source data. It references the company name \"Acme Analytics,\" which is not specified in the source, and mentions a \"Data Analyst position,\" which is not provided in the source data. The date \"March 31, 2026\" is not in the source and appears fabricated. The letter's content is generic and does not include any verifiable details such as the candidate's name, contact information, summary, work experience, education, skills, projects, certifications, or awards. Overall, it introduces several elements not present in the source data, resulting in a low faithfulness score."
+          },
+          "relevance": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document is a generic cover letter that expresses interest in a Data Analyst role but does not mention any specific skills, experiences, or qualifications aligned with the job description. It lacks references to SQL, Python, dashboard creation, data analysis, or communication skills. There is no indication of relevant work experience or how the candidate meets the key requirements, making it minimally relevant to the specific role."
+          },
+          "coherence": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document is brief and generally professional in tone, but it lacks clear organization with distinct sections (such as an introduction, body, and closing). It is not well-structured, as it primarily consists of a single paragraph without detailed information about the candidate\u2019s experience or qualifications. The letter also does not follow a logical order, such as mentioning recent experience first or providing specific examples. Additionally, it could benefit from more elaboration to strengthen coherence and demonstrate suitability for the role."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0988,
+            "recall": 0.1667,
+            "matched": [
+              "actionable",
+              "analysis",
+              "analyst",
+              "cross-functional",
+              "data",
+              "raw",
+              "turn",
+              "writing"
+            ],
+            "missed": [
+              "bachelor",
+              "bigquery",
+              "building",
+              "cloud",
+              "communication",
+              "dashboards",
+              "degree",
+              "experience",
+              "exploratory",
+              "familiarity",
+              "field",
+              "findings",
+              "growing",
+              "include",
+              "insights.",
+              "join",
+              "leadership.",
+              "learning",
+              "looking",
+              "machine",
+              "nice",
+              "performing",
+              "power",
+              "presenting",
+              "proficiency",
+              "python",
+              "quantitative",
+              "queries",
+              "requirements",
+              "responsibilities",
+              "skills.",
+              "snowflake",
+              "sql",
+              "stakeholders",
+              "strong",
+              "tableau",
+              "team.",
+              "warehouses",
+              "work",
+              "years"
+            ],
+            "score": 0.1667,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 52.2,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_edge_empty",
+        "job": "job_swe_senior",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document contains multiple elements that are not supported by the source data. It introduces placeholders such as \"[Name]\", \"[Email]\", \"[Job Title]\", \"[Company]\", \"[Degree]\", \"[School]\", \"[Project Name]\", \"[Certification Name]\", \"[Award Name]\", and \"[Achievement + measurable impact]\" which are not present in the source. Additionally, it lists skills (e.g., Python, SQL, Tableau, Git, AWS, Excel, Communication, Leadership) and project details with specific descriptions and metrics that are not provided in the source data. The only factual information that could be verified from the source is the contact information section, which is left as placeholders. Overall, the document fabricates or implies details beyond the explicit facts in the source, leading to a low faithfulness score."
+          },
+          "relevance": {
+            "score": 3.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 3/10  \nReasoning: The generated document provides a generic professional profile with broad skills and experience sections but lacks specific references to key requirements of the Senior Software Engineer role at TechForward. It does not mention experience with microservices, distributed systems, cloud infrastructure (AWS/GCP), or CI/CD pipelines, which are critical for the position. While it lists relevant skills like Python and AWS, it does not demonstrate how these are applied in relevant contexts or highlight leadership/mentorship experience. Overall, the content is too general and does not sufficiently emphasize the specific qualifications and experiences that match the job description."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, following a logical order (professional summary, work experience, education, skills, projects, certifications, awards). It maintains a professional tone and is free of grammatical errors. However, as a template, it lacks specific content to fully assess coherence in terms of content flow or relevance. The structure is standard and effective, but minor improvements could include more detailed guidance on content consistency within sections. Overall, it demonstrates good coherence but remains somewhat generic."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": false,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 0.8,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0568,
+            "recall": 0.1282,
+            "matched": [
+              "aws",
+              "experience",
+              "python",
+              "strong",
+              "technical"
+            ],
+            "missed": [
+              "architect",
+              "architectures",
+              "backend",
+              "bonus",
+              "build",
+              "cloud",
+              "decisions.",
+              "design",
+              "developers",
+              "distributed",
+              "drive",
+              "engineer",
+              "engineering",
+              "event-driven",
+              "familiarity",
+              "gcp",
+              "graphql.",
+              "infrastructure",
+              "java",
+              "junior",
+              "kubernetes",
+              "mentor",
+              "microservices",
+              "pipelines.",
+              "proficiency",
+              "requirements",
+              "scalable",
+              "seeking",
+              "senior",
+              "software",
+              "systems",
+              "systems.",
+              "techforward",
+              "years"
+            ],
+            "score": 0.1282,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated letter contains multiple claims about the candidate's experience and skills\u2014such as \"experience in software engineering with a focus on backend development,\" \"contributing to architecture design,\" \"mentoring junior developers,\" and \"delivering reliable, scalable systems\"\u2014which are not explicitly supported by the source data. Additionally, it references interests in \"distributed systems and cloud infrastructure\" and \"pursuing robust CI/CD practices,\" none of which are present in the source. The only verifiable information is the recipient name (\"Hiring Manager\") and the company (\"TechForward\"). The rest of the content introduces fabricated details and assumptions, leading to a low faithfulness score."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The letter mentions general backend development, scalable systems, distributed architectures, and cloud infrastructure, which align with key aspects of the role. However, it lacks specific references to the required skills such as proficiency in Python or Java, experience with microservices, Kubernetes, event-driven architectures, or CI/CD pipelines. The experience is described vaguely without concrete work examples or keywords matching the job description. Overall, it addresses some relevant themes but does not sufficiently emphasize the core technical requirements or demonstrate direct alignment with the role's key responsibilities."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with a clear introduction, body, and closing. It maintains a professional tone throughout and is grammatically correct. The content logically emphasizes relevant experience and interest in the company, aligning with the position. However, it could improve coherence by providing more specific examples of skills or achievements, and slightly better structuring the paragraph about experience to avoid ambiguity. Overall, it is coherent and effective but leaves some room for clearer detail and stronger organization."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1759,
+            "recall": 0.4872,
+            "matched": [
+              "architectures",
+              "backend",
+              "cloud",
+              "decisions.",
+              "design",
+              "developers",
+              "distributed",
+              "drive",
+              "engineer",
+              "engineering",
+              "experience",
+              "infrastructure",
+              "junior",
+              "scalable",
+              "senior",
+              "software",
+              "systems",
+              "techforward",
+              "technical"
+            ],
+            "missed": [
+              "architect",
+              "aws",
+              "bonus",
+              "build",
+              "event-driven",
+              "familiarity",
+              "gcp",
+              "graphql.",
+              "java",
+              "kubernetes",
+              "mentor",
+              "microservices",
+              "pipelines.",
+              "proficiency",
+              "python",
+              "requirements",
+              "seeking",
+              "strong",
+              "systems.",
+              "years"
+            ],
+            "score": 0.4872,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 50.98,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_edge_empty",
+        "job": "job_ml_engineer",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document contains multiple elements that are not supported by the source data. It includes placeholders such as \"[Name]\", \"[Email]\", \"[Job Title]\", \"[Company]\", \"[Degree]\", \"[School]\", \"[Project Name]\", \"[Certification Name]\", \"[Award Name]\", and \"[Achievement + measurable impact]\" which are not present in the source. Additionally, the bullet points under work experience, education, projects, certifications, and awards are generic and fabricated, as no specific details are provided. The summary is a placeholder and does not reflect any actual content from the source. Overall, the document introduces numerous invented details and lacks verifiable facts from the source data, resulting in a low faithfulness score."
+          },
+          "relevance": {
+            "score": 3.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 3/10  \nReasoning: The generated document provides a generic professional profile with broad skills and experience sections but lacks specific emphasis on key requirements for the Machine Learning Engineer role at NeuralWave. It does not mention NLP, recommendation systems, real-time inference, or MLOps tools like MLflow or Kubeflow. The work experience bullets are placeholders and do not demonstrate relevant projects or expertise aligned with deploying production ML models or working with deep learning frameworks such as PyTorch or TensorFlow. Overall, it minimally addresses the specific skills and experiences needed for this role."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, following a logical order (professional summary, work experience, education, skills, projects, certifications, awards). It maintains a professional tone and is generally grammatically correct. However, it lacks specific content to fully assess coherence, and the placeholder format may hinder immediate readability. Minor improvements could include ensuring consistent formatting and more detailed content to enhance clarity and flow."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": false,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 0.8,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0575,
+            "recall": 0.1316,
+            "matched": [
+              "experience",
+              "python",
+              "strong",
+              "tools",
+              "work"
+            ],
+            "missed": [
+              "computer",
+              "deploy",
+              "develop",
+              "engineer",
+              "engineering",
+              "field",
+              "hiring",
+              "inference",
+              "kubeflow",
+              "learning",
+              "machine",
+              "mlflow",
+              "mlops",
+              "models.",
+              "neuralwave",
+              "nlp",
+              "phd",
+              "pipelines",
+              "plus.",
+              "production",
+              "proficiency",
+              "publication",
+              "pytorch",
+              "real-time",
+              "recommendation",
+              "record",
+              "related",
+              "requirements",
+              "science",
+              "services.",
+              "systems",
+              "tensorflow",
+              "years"
+            ],
+            "score": 0.1316,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 0.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 0/10  \nReasoning: The generated cover letter contains multiple fabricated details not present in the source data. It references the company \"NeuralWave,\" which is not mentioned in the source. It claims the candidate has a background in \"machine learning engineering,\" \"NLP pipelines,\" and \"recommendation systems,\" none of which are specified in the source data. The letter also discusses the candidate's interest in \"scalable, production-grade ML solutions\" and \"collaborating with a team,\" which are not detailed in the source. Additionally, the date \"March 31, 2026\" is inconsistent with the source data's context and appears arbitrary. Overall, the content introduces numerous unverified claims and details that are not supported by the source, resulting in a score of 0."
+          },
+          "relevance": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document is a generic cover letter that expresses interest in the role but does not highlight any specific skills, experiences, or qualifications aligned with the job requirements. It mentions general enthusiasm for ML and AI but lacks references to key job responsibilities such as NLP pipelines, recommendation systems, real-time inference, or relevant technical skills like Python, PyTorch, TensorFlow, or MLOps tools. There is no mention of educational background, work experience, or publications, which are important for this role. Overall, it minimally addresses the specific needs of the position."
+          },
+          "coherence": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document is brief and generally professional, but it lacks clear organization with distinct sections (such as an introduction, body, and closing). It is somewhat repetitive in expressing enthusiasm without adding specific details about skills or experience, and it does not provide concrete examples or achievements. The tone is appropriate, but the overall coherence is limited by its brevity and lack of logical flow beyond a basic expression of interest. Additionally, it does not follow a structured format typical of well-organized cover letters."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.1707,
+            "recall": 0.3684,
+            "matched": [
+              "engineer",
+              "engineering",
+              "hiring",
+              "inference",
+              "learning",
+              "machine",
+              "neuralwave",
+              "nlp",
+              "pipelines",
+              "production",
+              "real-time",
+              "recommendation",
+              "systems",
+              "work"
+            ],
+            "missed": [
+              "computer",
+              "deploy",
+              "develop",
+              "experience",
+              "field",
+              "kubeflow",
+              "mlflow",
+              "mlops",
+              "models.",
+              "phd",
+              "plus.",
+              "proficiency",
+              "publication",
+              "python",
+              "pytorch",
+              "record",
+              "related",
+              "requirements",
+              "science",
+              "services.",
+              "strong",
+              "tensorflow",
+              "tools",
+              "years"
+            ],
+            "score": 0.3684,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 49.29,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_edge_empty",
+        "job": "job_edge_minimal",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 0.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 0/10  \nReasoning: The generated text does not contain any facts from the source data. Instead, it is a generic prompt requesting missing information from the user to generate a resume. It does not include any details about the candidate's name, contact info, work experience, education, skills, projects, certifications, or achievements. Therefore, it contains no factual content from the source and should be scored at the lowest level."
+          },
+          "relevance": {
+            "score": 1.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 1/10  \nReasoning: The generated document is a generic request for candidate information to create a resume and does not address or highlight any skills, experiences, or qualifications relevant to the role involving data tasks. It lacks mention of data-related skills, tools, or responsibilities, and does not demonstrate an understanding of the job's requirements."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections and a professional tone. It logically outlines the information needed to generate a tailored resume, starting with general instructions and then detailing specific data points. The language is grammatically correct and free of contradictions or repetitions. However, it could improve slightly in clarity by explicitly indicating the next step after providing the information, and perhaps by more clearly separating the instructions from the closing statement. Overall, it demonstrates good coherence and structure suitable for its purpose."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": false,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 0.8,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0667,
+            "recall": 1.0,
+            "matched": [
+              "data",
+              "help",
+              "looking",
+              "someone",
+              "stuff."
+            ],
+            "missed": [],
+            "score": 1.0,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 0.23076923076923078,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [],
+            "score": 0.23076923076923078,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated letter contains minimal factual content directly supported by the source data. It references a \"data-related position\" at \"Company Name,\" which is generic and not specified in the source. The date \"March 31, 2026\" is not provided in the source data, constituting an invented detail. The phrase \"support a team focused on turning data into actionable insights\" is a generic statement and not explicitly present in the source. The closing includes placeholders \"[Your Name]\" and \"[Email] | [Phone] | [LinkedIn/Website]\" rather than actual verified contact details. Overall, the letter does not contain any specific facts from the source, and it introduces fabricated or generic elements, leading to a low score."
+          },
+          "relevance": {
+            "score": 1.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 1/10  \nReasoning: The document is a generic cover letter that mentions an interest in data work but does not specify any relevant skills, experiences, or qualifications related to data tasks. It lacks details about the candidate\u2019s background, technical abilities, or specific work that aligns with the job's requirements. The content is minimal and does not demonstrate how the candidate can contribute to the role, making it only marginally relevant at best."
+          },
+          "coherence": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The letter is brief and generally clear, but it lacks organization and depth. It does not include specific sections such as an introduction, body, and conclusion, which would improve clarity. The tone is professional but somewhat generic, and the content does not demonstrate a clear understanding of the role or highlight relevant experience. Additionally, the phrase \"growing interest in data work\" is vague and does not convey confidence or specific skills. Overall, it is somewhat coherent but needs better structure, detail, and professionalism to score higher."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0238,
+            "recall": 0.2,
+            "matched": [
+              "data"
+            ],
+            "missed": [
+              "help",
+              "looking",
+              "someone",
+              "stuff."
+            ],
+            "score": 0.2,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 47.66,
+        "status": "success"
+      },
+      {
+        "candidate": "candidate_edge_empty",
+        "job": "job_edge_very_long",
+        "resume_metrics": {
+          "faithfulness": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document contains multiple elements that are not supported by the source data. It introduces placeholders such as \"[Name]\", \"[Email]\", \"[Job Title]\", \"[Company]\", \"[Degree]\", \"[School]\", \"[Project Name]\", \"[Certification Name]\", \"[Award Name]\", and \"[Achievement + measurable impact]\" which are not present in the source. Additionally, it lists skills (e.g., Python, SQL, Tableau, Git, AWS, Excel, Communication, Leadership) and project details with specific descriptions and metrics that are not provided in the source data. The only factual information that could be verified from the source is the contact details section, which is incomplete, and the structure of the document. Overall, the document fabricates or implies details beyond the source, leading to a low faithfulness score."
+          },
+          "relevance": {
+            "score": 2.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 2/10  \nReasoning: The generated document provides a generic professional resume template with sections like Summary, Work Experience, Education, Skills, Projects, Certifications, and Awards. However, it does not specifically address the key skills, experiences, or qualifications outlined in the job description for a Full Stack Developer at MegaCorp International. It lacks mention of relevant technologies such as React, Node.js, PostgreSQL, RESTful API design, web security practices, testing frameworks (Jest, Cypress), or experience with agile methodologies. The skills listed are broad and do not emphasize the specific technical stack or requirements. Overall, the content is too generic and does not highlight the candidate's alignment with the specific role, resulting in a very low relevance score."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, following a logical order (professional summary, work experience, education, skills, projects, certifications, awards). It maintains a professional tone and is free of grammatical errors. However, as a template, it lacks specific content to fully assess coherence in terms of content flow or relevance. The structure is standard and effective, but minor improvements could include more detailed section headings or clearer differentiation between sections for enhanced clarity. Overall, it demonstrates good coherence but remains somewhat generic."
+          },
+          "completeness": {
+            "checks": {
+              "name_present": false,
+              "work_experience_coverage": 1.0,
+              "education_coverage": 1.0,
+              "skills_coverage": 1.0,
+              "section_headers_present": 1.0
+            },
+            "score": 0.8,
+            "max_score": 1.0
+          },
+          "keyword_overlap": {
+            "jaccard": 0.0345,
+            "recall": 0.0476,
+            "matched": [
+              "aws",
+              "experience",
+              "skills",
+              "strong",
+              "tools",
+              "work"
+            ],
+            "missed": [
+              "accessibility",
+              "actions",
+              "agile",
+              "api",
+              "applications",
+              "apply.",
+              "architecture",
+              "austin.",
+              "azure",
+              "backgrounds",
+              "best",
+              "blog",
+              "building",
+              "candidates",
+              "cloud",
+              "code",
+              "committed",
+              "competitive",
+              "comprehensive",
+              "concept",
+              "containerization",
+              "contribute",
+              "culture",
+              "customer-facing",
+              "cypress",
+              "databases",
+              "datadog",
+              "datadog.",
+              "deployment",
+              "design",
+              "developer",
+              "development",
+              "docker",
+              "documentation",
+              "emphasizes",
+              "encourage",
+              "end-to-end",
+              "engineering",
+              "engineers",
+              "enterprise",
+              "environment",
+              "equity",
+              "express",
+              "familiarity",
+              "features",
+              "frameworks",
+              "francisco",
+              "full",
+              "full-stack",
+              "github",
+              "graphql",
+              "hybrid",
+              "includes",
+              "inclusive",
+              "internal",
+              "international",
+              "involves",
+              "javascript",
+              "jest",
+              "join",
+              "knowledge",
+              "kubernetes",
+              "megacorp",
+              "model",
+              "monitoring",
+              "new",
+              "next.js",
+              "nice",
+              "node.js",
+              "observability",
+              "offer",
+              "offices",
+              "optimization",
+              "owasp",
+              "own",
+              "participate",
+              "performance",
+              "platform",
+              "postgresql",
+              "postgresql.",
+              "posts.",
+              "practices",
+              "production.",
+              "pto",
+              "quality",
+              "react",
+              "redis",
+              "relational",
+              "relic",
+              "requirements",
+              "restful",
+              "reviews",
+              "salary",
+              "san",
+              "security",
+              "seeking",
+              "sharing",
+              "sprints",
+              "stack",
+              "standards",
+              "system.",
+              "talks",
+              "team.",
+              "tech",
+              "terraform",
+              "testing",
+              "thorough",
+              "through",
+              "top",
+              "two-week",
+              "typescript",
+              "understanding",
+              "unlimited",
+              "using",
+              "value",
+              "wcag",
+              "web",
+              "workplace",
+              "years",
+              "york"
+            ],
+            "score": 0.0476,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "output_headers": [
+              "[Name]",
+              "Summary",
+              "Work Experience",
+              "[Job Title] - [Company]",
+              "[Job Title] - [Company]",
+              "Education",
+              "[Degree] - [School]",
+              "Skills",
+              "Projects",
+              "[Project Name]",
+              "Certifications",
+              "[Certification Name]",
+              "Awards and Achievements"
+            ],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "cover_letter_metrics": {
+          "faithfulness": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The generated document largely contains information that is consistent with the source data, including the recipient name (\"Hiring Manager\"), the company name (\"MegaCorp International\"), and the general tone and length preferences. It references the position (\"Full Stack Developer\") and mentions the company's focus on code quality, scalable solutions, and inclusive workplace culture, which align with typical expectations but are not explicitly detailed in the source data.  \n\nHowever, the source data does not specify the job title, the company's specific values or initiatives (such as building an inclusive workplace), or any particular technologies beyond general skills. The mention of \"React, Node.js, and PostgreSQL,\" \"Jest and Cypress,\" and \"OWASP Top 10\" are not present in the source data and appear to be fabricated or assumed. Additionally, the candidate's background details (such as experience in Agile environments, familiarity with testing approaches, or specific skills) are not provided in the source data, making these claims unverified.  \n\nWhile the letter maintains a professional tone and plausible content, the inclusion of specific technologies and cultural aspects not in the source data reduces its faithfulness. Therefore, deducting a couple of points for these fabrications results in an 8."
+          },
+          "relevance": {
+            "score": 4.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 4/10  \nReasoning: The document mentions relevant skills such as full-stack development, JavaScript/TypeScript, RESTful APIs, relational databases, testing frameworks, and web security, which align with key requirements. However, it lacks specific references to React, Node.js, PostgreSQL, and other technologies explicitly listed in the job description. It also does not mention experience with agile practices, architecture reviews, or ownership of features from concept to production. The content is somewhat generic and does not emphasize the candidate\u2019s direct experience with the specific tech stack or responsibilities outlined by MegaCorp. Overall, it addresses some relevant skills but does not sufficiently highlight the most critical qualifications or tailor the experience to the specific role."
+          },
+          "coherence": {
+            "score": 8.0,
+            "max_score": 10.0,
+            "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with a clear introduction, body, and closing. It maintains a professional tone throughout and is grammatically correct. The content logically presents the candidate\u2019s experience and interest in the company, aligning their skills with the job requirements. However, some sections could benefit from more explicit structure or separation (e.g., bullet points for skills) to enhance clarity. Additionally, minor improvements in transitions could make the flow even smoother. Overall, it is coherent and effectively communicates the candidate\u2019s qualifications."
+          },
+          "keyword_overlap": {
+            "jaccard": 0.291,
+            "recall": 0.4365,
+            "matched": [
+              "agile",
+              "api",
+              "architecture",
+              "best",
+              "blog",
+              "building",
+              "code",
+              "comprehensive",
+              "contribute",
+              "culture",
+              "cypress",
+              "databases",
+              "design",
+              "developer",
+              "development",
+              "documentation",
+              "end-to-end",
+              "engineering",
+              "enterprise",
+              "experience",
+              "express",
+              "francisco",
+              "full",
+              "inclusive",
+              "internal",
+              "international",
+              "javascript",
+              "jest",
+              "knowledge",
+              "megacorp",
+              "node.js",
+              "owasp",
+              "performance",
+              "platform",
+              "posts.",
+              "practices",
+              "quality",
+              "react",
+              "relational",
+              "restful",
+              "reviews",
+              "san",
+              "security",
+              "sharing",
+              "stack",
+              "strong",
+              "talks",
+              "tech",
+              "testing",
+              "thorough",
+              "through",
+              "top",
+              "typescript",
+              "web",
+              "workplace"
+            ],
+            "missed": [
+              "accessibility",
+              "actions",
+              "applications",
+              "apply.",
+              "austin.",
+              "aws",
+              "azure",
+              "backgrounds",
+              "candidates",
+              "cloud",
+              "committed",
+              "competitive",
+              "concept",
+              "containerization",
+              "customer-facing",
+              "datadog",
+              "datadog.",
+              "deployment",
+              "docker",
+              "emphasizes",
+              "encourage",
+              "engineers",
+              "environment",
+              "equity",
+              "familiarity",
+              "features",
+              "frameworks",
+              "full-stack",
+              "github",
+              "graphql",
+              "hybrid",
+              "includes",
+              "involves",
+              "join",
+              "kubernetes",
+              "model",
+              "monitoring",
+              "new",
+              "next.js",
+              "nice",
+              "observability",
+              "offer",
+              "offices",
+              "optimization",
+              "own",
+              "participate",
+              "postgresql",
+              "postgresql.",
+              "production.",
+              "pto",
+              "redis",
+              "relic",
+              "requirements",
+              "salary",
+              "seeking",
+              "skills",
+              "sprints",
+              "standards",
+              "system.",
+              "team.",
+              "terraform",
+              "tools",
+              "two-week",
+              "understanding",
+              "unlimited",
+              "using",
+              "value",
+              "wcag",
+              "work",
+              "years",
+              "york"
+            ],
+            "score": 0.4365,
+            "max_score": 1.0
+          },
+          "template_adherence": {
+            "structural_match": 1.0,
+            "template_headers": [],
+            "output_headers": [],
+            "score": 1.0,
+            "max_score": 1.0
+          }
+        },
+        "timing_seconds": 83.01,
+        "status": "success"
+      }
+    ]
+  },
+  "rag": {
+    "summary": {
+      "total": 2,
+      "successful": 2,
+      "avg_ndcg_at_3": 1.0,
+      "avg_mrr": 1.0,
+      "avg_precision_at_3": 1.0
+    },
+    "details": [
+      {
+        "test_case_id": "rank_data_analyst",
+        "query": "data analyst SQL Tableau dashboards",
+        "num_jobs": 5,
+        "ranked_order": [
+          {
+            "title": "Business Intelligence Analyst",
+            "company": "FinTech Inc",
+            "relevance": 3
+          },
+          {
+            "title": "Senior Data Analyst",
+            "company": "DataCo",
+            "relevance": 3
+          },
+          {
+            "title": "Data Analyst Intern",
+            "company": "StartupX",
+            "relevance": 2
+          },
+          {
+            "title": "Machine Learning Engineer",
+            "company": "AI Labs",
+            "relevance": 0
+          },
+          {
+            "title": "Marketing Coordinator",
+            "company": "BrandCo",
+            "relevance": 0
+          }
+        ],
+        "ndcg_at_3": 1.0,
+        "mrr": 1.0,
+        "precision_at_3": 1.0,
+        "status": "success"
+      },
+      {
+        "test_case_id": "rank_software_engineer",
+        "query": "software engineer Python microservices AWS",
+        "num_jobs": 4,
+        "ranked_order": [
+          {
+            "title": "Backend Software Engineer",
+            "company": "CloudScale",
+            "relevance": 3
+          },
+          {
+            "title": "Python Developer",
+            "company": "DataPipe",
+            "relevance": 3
+          },
+          {
+            "title": "DevOps Engineer",
+            "company": "InfraTeam",
+            "relevance": 1
+          },
+          {
+            "title": "Frontend Developer",
+            "company": "WebCraft",
+            "relevance": 0
+          }
+        ],
+        "ndcg_at_3": 1.0,
+        "mrr": 1.0,
+        "precision_at_3": 1.0,
+        "status": "success"
+      }
+    ]
+  },
+  "ab_testing": {
+    "summary": {
+      "total_tests": 1,
+      "total_comparisons": 3,
+      "wins": {
+        "gpt-4.1-nano": 3,
+        "gpt-4.1-mini": 0,
+        "tie": 0
+      },
+      "win_rates": {
+        "gpt-4.1-nano": 1.0,
+        "gpt-4.1-mini": 0.0,
+        "tie": 0.0
+      }
+    },
+    "details": [
+      {
+        "variant_a": "gpt-4.1-nano",
+        "variant_b": "gpt-4.1-mini",
+        "candidate": "candidate_1",
+        "job": "job_data_analyst",
+        "metrics_a": {
+          "resume": {
+            "faithfulness": {
+              "score": 9.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 9/10  \nReasoning: The generated document largely aligns with the source data, accurately reflecting the candidate's name, contact info, summary, work experience, education, skills, projects, certification, and awards. The only notable deviation is the phrase \"Results-driven Data Analyst\" in the summary, which is a paraphrase not explicitly present in the source, but it is consistent with the provided summary description. All specific details such as job titles, companies, dates, bullet points, education, skills, projects, and certifications are accurate and directly supported by the source data. There are no invented entities, fabricated metrics, or unverified claims. The slight paraphrasing in the summary does not significantly impact faithfulness. Therefore, the document is highly faithful, warranting a 9 out of 10."
+            },
+            "relevance": {
+              "score": 8.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 8/10  \nReasoning: The document effectively highlights relevant skills such as SQL, Python, Tableau, and experience with dashboards and data analysis, which align well with the job requirements. It mentions working with cross-functional teams and presenting insights, matching the role's emphasis on communication and stakeholder collaboration. The inclusion of machine learning experience and familiarity with data tools like Tableau and Python adds value, aligning with the \"nice to have\" qualifications. However, it could improve by explicitly emphasizing experience with cloud data warehouses (e.g., Snowflake, BigQuery) and more directly matching the specific responsibilities listed in the job description. Overall, it is highly relevant but slightly lacking in explicit mention of some key preferred skills."
+            },
+            "coherence": {
+              "score": 8.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 8/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It follows a logical order, presenting recent experience first and including relevant details in each section. The language is grammatically correct, and there is minimal repetition or contradiction. However, some sections could benefit from more consistent formatting (e.g., bullet points vs. paragraph style in Projects) to enhance clarity. Overall, it is coherent and effectively structured, but slight improvements in formatting consistency and elaboration could elevate its clarity further."
+            },
+            "completeness": {
+              "checks": {
+                "name_present": true,
+                "work_experience_coverage": 1.0,
+                "education_coverage": 1.0,
+                "skills_coverage": 1.0,
+                "section_headers_present": 1.0
+              },
+              "score": 1.0,
+              "max_score": 1.0
+            },
+            "keyword_overlap": {
+              "jaccard": 0.0913,
+              "recall": 0.3958,
+              "matched": [
+                "actionable",
+                "analyst",
+                "bachelor",
+                "building",
+                "communication",
+                "cross-functional",
+                "dashboards",
+                "data",
+                "experience",
+                "exploratory",
+                "learning",
+                "machine",
+                "python",
+                "queries",
+                "sql",
+                "stakeholders",
+                "tableau",
+                "work",
+                "writing"
+              ],
+              "missed": [
+                "analysis",
+                "bigquery",
+                "cloud",
+                "degree",
+                "familiarity",
+                "field",
+                "findings",
+                "growing",
+                "include",
+                "insights.",
+                "join",
+                "leadership.",
+                "looking",
+                "nice",
+                "performing",
+                "power",
+                "presenting",
+                "proficiency",
+                "quantitative",
+                "raw",
+                "requirements",
+                "responsibilities",
+                "skills.",
+                "snowflake",
+                "strong",
+                "team.",
+                "turn",
+                "warehouses",
+                "years"
+              ],
+              "score": 0.3958,
+              "max_score": 1.0
+            }
+          },
+          "cover_letter": {
+            "faithfulness": {
+              "score": 9.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 9/10\n\nReasoning: The generated document accurately reflects the facts provided in the source data. It correctly states Taylor Morgan's current role as Product Analyst at BrightPath Talent starting June 2024, and his previous internship at Northstar Health from January to May 2024, including the relevant tasks and skills. The mention of building dashboards, automations, and testing prompts aligns with the source bullets. The skills listed (Python, SQL, Tableau, stakeholder communication) are consistent with the source data. The education details, including the degree, school, and relevant coursework, are correctly included. The certifications and awards are accurately represented, with no fabricated information.\n\nThe only minor issue is the mention of \"building dashboards that reduced weekly recruiting operations review time by 35%,\" which is a direct quote from the source, so it is faithful. The company name \"Acme Analytics\" and the recipient \"Hiring Manager\" are plausible placeholders, as the source does not specify a company or recipient, so these are acceptable.\n\nOverall, the content is faithful to the source data, with no invented employers, job titles, companies, metrics, certifications, or unverified claims. The only deduction is for the generic placeholders (\"Acme Analytics,\" \"Hiring Manager\") which are not explicitly in the source but are typical in cover letters, and thus acceptable.\n\nTherefore, a 9 out of 10 is appropriate, considering the high fidelity to the source data."
+            },
+            "relevance": {
+              "score": 7.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 7/10  \nReasoning: The document highlights relevant skills such as building dashboards, working with SQL and Python, and creating Tableau visualizations, which align with key job requirements. It also mentions experience with stakeholder communication and data analysis, supporting the role's responsibilities. However, it lacks explicit mention of experience with Power BI, cloud data warehouses (Snowflake, BigQuery), or building dashboards specifically for cross-functional stakeholders, which are important for the role. The work experience is somewhat general and could better emphasize direct experience with turning raw data into actionable insights in a manner that matches the job description more closely. Overall, it is relevant but could be more targeted to the specific tools and tasks outlined."
+            },
+            "coherence": {
+              "score": 9.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 9/10  \nReasoning: The document is well-organized with clear sections, including an introduction, detailed experience, motivation, and closing. It maintains a professional tone throughout and is grammatically correct. The experiences are presented in a logical order, highlighting recent roles first, and the content is free of repetition or contradictions. Minor improvements could be made in slightly more varied sentence structures or explicit section headings for enhanced clarity, but overall, it demonstrates high coherence."
+            },
+            "completeness": {
+              "checks": {
+                "name_present": true,
+                "work_experience_coverage": 1.0,
+                "education_coverage": 0.0,
+                "skills_coverage": 0.3333333333333333,
+                "section_headers_present": 0.5
+              },
+              "score": 0.5666666666666667,
+              "max_score": 1.0
+            },
+            "keyword_overlap": {
+              "jaccard": 0.1234,
+              "recall": 0.3958,
+              "matched": [
+                "actionable",
+                "analysis",
+                "analyst",
+                "building",
+                "communication",
+                "dashboards",
+                "data",
+                "experience",
+                "exploratory",
+                "growing",
+                "insights.",
+                "performing",
+                "presenting",
+                "python",
+                "raw",
+                "sql",
+                "strong",
+                "tableau",
+                "writing"
+              ],
+              "missed": [
+                "bachelor",
+                "bigquery",
+                "cloud",
+                "cross-functional",
+                "degree",
+                "familiarity",
+                "field",
+                "findings",
+                "include",
+                "join",
+                "leadership.",
+                "learning",
+                "looking",
+                "machine",
+                "nice",
+                "power",
+                "proficiency",
+                "quantitative",
+                "queries",
+                "requirements",
+                "responsibilities",
+                "skills.",
+                "snowflake",
+                "stakeholders",
+                "team.",
+                "turn",
+                "warehouses",
+                "work",
+                "years"
+              ],
+              "score": 0.3958,
+              "max_score": 1.0
+            }
+          }
+        },
+        "metrics_b": {
+          "resume": {
+            "faithfulness": {
+              "score": 9.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 9/10\n\nReasoning: The generated document largely adheres to the source data, accurately reflecting the candidate's name, contact information, summary, work experience, education, skills, projects, certification, and awards. The only minor issue is the phrase \"large language model workflow\" in the \"Interview Prep Assistant\" project, which is a slight elaboration not explicitly present in the source (\"a lightweight LLM workflow\"). While \"LLM\" is a common abbreviation for \"large language model,\" the addition of \"large\" is an inference rather than a direct fact from the source. All other details, including job titles, companies, dates, bullet points, skills, and certifications, are faithfully represented without fabrication or distortion. Therefore, the document is highly faithful, with only a minimal, justifiable inference."
+            },
+            "relevance": {
+              "score": 8.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 8/10  \nReasoning: The document highlights key skills and experiences relevant to the Data Analyst role, such as proficiency in SQL, Python, Tableau, and experience building dashboards and performing data analysis. It also mentions collaborating with cross-functional teams and presenting insights to leadership, aligning well with the job requirements. The candidate's educational background in Business Analytics and coursework in data mining, database systems, and machine learning add value. However, the experience with cloud data warehouses like Snowflake or BigQuery is not explicitly mentioned, and while machine learning is noted as coursework, practical experience with it is not emphasized. Overall, the resume is highly relevant but could be improved by explicitly addressing cloud data warehouse experience and more directly matching the specific responsibilities outlined in the job description."
+            },
+            "coherence": {
+              "score": 9.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 9/10  \nReasoning: The document is well-organized with clear sections, maintaining a professional tone throughout. It follows a logical order, presenting recent experience first, and includes relevant details in each section. The language is grammatically correct, and there is no noticeable repetition or contradiction. Minor improvements could be made in formatting consistency (e.g., bullet point styles) or elaboration in some areas, but overall, it is a coherent and effectively structured resume."
+            },
+            "completeness": {
+              "checks": {
+                "name_present": true,
+                "work_experience_coverage": 1.0,
+                "education_coverage": 1.0,
+                "skills_coverage": 1.0,
+                "section_headers_present": 1.0
+              },
+              "score": 1.0,
+              "max_score": 1.0
+            },
+            "keyword_overlap": {
+              "jaccard": 0.0952,
+              "recall": 0.375,
+              "matched": [
+                "actionable",
+                "analyst",
+                "bachelor",
+                "communication",
+                "cross-functional",
+                "dashboards",
+                "data",
+                "experience",
+                "leadership.",
+                "learning",
+                "machine",
+                "python",
+                "sql",
+                "stakeholders",
+                "strong",
+                "tableau",
+                "work",
+                "writing"
+              ],
+              "missed": [
+                "analysis",
+                "bigquery",
+                "building",
+                "cloud",
+                "degree",
+                "exploratory",
+                "familiarity",
+                "field",
+                "findings",
+                "growing",
+                "include",
+                "insights.",
+                "join",
+                "looking",
+                "nice",
+                "performing",
+                "power",
+                "presenting",
+                "proficiency",
+                "quantitative",
+                "queries",
+                "raw",
+                "requirements",
+                "responsibilities",
+                "skills.",
+                "snowflake",
+                "team.",
+                "turn",
+                "warehouses",
+                "years"
+              ],
+              "score": 0.375,
+              "max_score": 1.0
+            }
+          },
+          "cover_letter": {
+            "faithfulness": {
+              "score": 9.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 9/10\n\nReasoning: The generated document accurately reflects the facts provided in the source data. It correctly states Taylor Morgan's current role as a Product Analyst at BrightPath Talent starting June 2024, and previous internship at Northstar Health from January to May 2024, including the relevant tasks and skills. The education details, skills, projects, and certifications match the source data, with no fabricated information. The only minor deduction is that the company name \"Acme Analytics\" and the address are placeholders, but since the recipient name is \"Hiring Manager\" and no specific company name is provided in the source, this is acceptable and does not constitute hallucination. Overall, the content is faithful to the source data, with no invented facts or unsupported claims."
+            },
+            "relevance": {
+              "score": 7.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 7/10  \nReasoning: The document demonstrates relevant skills and experiences aligned with the Data Analyst role, such as building dashboards, working with SQL and Python, and presenting insights to leadership. It mentions creating Tableau dashboards and analyzing data, which directly relates to key responsibilities. However, it lacks explicit mention of experience with building dashboards in Power BI or Tableau (beyond creating dashboards), performing exploratory data analysis in a more technical sense, and working with cloud data warehouses like Snowflake or BigQuery. The mention of machine learning is brief and not integrated into the core narrative. Overall, it addresses many key requirements but could better emphasize proficiency in all specified tools and techniques to achieve a higher score."
+            },
+            "coherence": {
+              "score": 9.0,
+              "max_score": 10.0,
+              "reasoning": "Score: 9/10  \nReasoning: The document is well-organized with clear sections, including an introduction, relevant experience, motivation for the role, and a closing statement. It maintains a professional tone throughout and is grammatically correct. The experiences are presented in a logical order, highlighting recent roles first, and the content is free of repetition or contradictions. Minor improvements could be made by slightly enhancing transitions between paragraphs for even smoother flow, but overall, it demonstrates high coherence and clarity."
+            },
+            "completeness": {
+              "checks": {
+                "name_present": true,
+                "work_experience_coverage": 1.0,
+                "education_coverage": 0.0,
+                "skills_coverage": 0.3333333333333333,
+                "section_headers_present": 0.5
+              },
+              "score": 0.5666666666666667,
+              "max_score": 1.0
+            },
+            "keyword_overlap": {
+              "jaccard": 0.1274,
+              "recall": 0.4167,
+              "matched": [
+                "actionable",
+                "analysis",
+                "analyst",
+                "building",
+                "communication",
+                "cross-functional",
+                "dashboards",
+                "data",
+                "experience",
+                "insights.",
+                "leadership.",
+                "learning",
+                "machine",
+                "python",
+                "raw",
+                "requirements",
+                "sql",
+                "strong",
+                "tableau",
+                "writing"
+              ],
+              "missed": [
+                "bachelor",
+                "bigquery",
+                "cloud",
+                "degree",
+                "exploratory",
+                "familiarity",
+                "field",
+                "findings",
+                "growing",
+                "include",
+                "join",
+                "looking",
+                "nice",
+                "performing",
+                "power",
+                "presenting",
+                "proficiency",
+                "quantitative",
+                "queries",
+                "responsibilities",
+                "skills.",
+                "snowflake",
+                "stakeholders",
+                "team.",
+                "turn",
+                "warehouses",
+                "work",
+                "years"
+              ],
+              "score": 0.4167,
+              "max_score": 1.0
+            }
+          }
+        },
+        "timing": {
+          "variant_a_seconds": 6.48,
+          "variant_b_seconds": 12.15
+        },
+        "preferences": {
+          "overall quality": {
+            "winner": "gpt-4.1-nano",
+            "raw_response": "Winner: A  \nConfidence: High  \nReasoning: Document A provides a more comprehensive and polished presentation of skills, experiences, and projects with clearer descriptions and consistent formatting, resulting in higher overall quality."
+          },
+          "job relevance": {
+            "winner": "gpt-4.1-nano",
+            "raw_response": "Winner: A  \nConfidence: High  \nReasoning: Document A provides more detailed descriptions of job-relevant skills, specific achievements, and technical expertise aligned with data analysis roles, making it more clearly tailored to the job relevance criterion."
+          },
+          "faithfulness to candidate data": {
+            "winner": "gpt-4.1-nano",
+            "raw_response": "Winner: A  \nConfidence: High  \nReasoning: Document A provides a more detailed and precise description of skills, projects, and achievements that align closely with candidate data, demonstrating greater faithfulness to the original information."
+          }
+        }
+      }
+    ]
+  },
+  "total_time_seconds": 3544.88
+}

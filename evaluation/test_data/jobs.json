@@ -1,0 +1,32 @@
+[
+  {
+    "id": "job_data_analyst",
+    "job_title": "Data Analyst",
+    "company_name": "Acme Analytics",
+    "job_description": "We are looking for a Data Analyst to join our growing team. You will work with cross-functional stakeholders to turn raw data into actionable insights. Responsibilities include building dashboards, writing SQL queries, performing exploratory data analysis, and presenting findings to leadership. Requirements: Bachelor's degree in a quantitative field, 1-3 years of experience with SQL and Python, proficiency in Tableau or Power BI, strong communication skills. Nice to have: experience with machine learning, familiarity with cloud data warehouses (Snowflake, BigQuery)."
+  },
+  {
+    "id": "job_swe_senior",
+    "job_title": "Senior Software Engineer",
+    "company_name": "TechForward",
+    "job_description": "TechForward is seeking a Senior Software Engineer to design and build scalable backend systems. You will architect microservices, mentor junior developers, and drive technical decisions. Requirements: 5+ years of software engineering experience, strong proficiency in Python or Java, experience with distributed systems and cloud infrastructure (AWS/GCP), familiarity with CI/CD pipelines. Bonus: experience with Kubernetes, event-driven architectures, and GraphQL."
+  },
+  {
+    "id": "job_ml_engineer",
+    "job_title": "Machine Learning Engineer",
+    "company_name": "NeuralWave",
+    "job_description": "NeuralWave is hiring a Machine Learning Engineer to develop and deploy production ML models. You will work on NLP pipelines, recommendation systems, and real-time inference services. Requirements: MS or PhD in Computer Science or related field, 3+ years of ML engineering experience, proficiency in Python, PyTorch or TensorFlow, experience with MLOps tools (MLflow, Kubeflow). Strong publication record is a plus."
+  },
+  {
+    "id": "job_edge_minimal",
+    "job_title": "",
+    "company_name": "",
+    "job_description": "Looking for someone to help with data stuff."
+  },
+  {
+    "id": "job_edge_very_long",
+    "job_title": "Full Stack Developer",
+    "company_name": "MegaCorp International",
+    "job_description": "MegaCorp International is seeking a Full Stack Developer to join our enterprise platform team. This role involves end-to-end development of customer-facing applications using React, Node.js, and PostgreSQL. You will work in an agile environment with two-week sprints, participate in architecture reviews, and contribute to our design system. We value engineers who can own features from concept to production. Requirements: 3+ years of full-stack development experience, strong JavaScript/TypeScript skills, experience with relational databases, familiarity with RESTful API design, understanding of web security best practices (OWASP Top 10), experience with testing frameworks (Jest, Cypress). Nice to have: experience with GraphQL, containerization (Docker), cloud deployment (AWS or Azure), accessibility standards (WCAG 2.1), performance optimization, monitoring and observability tools (Datadog, New Relic). Our tech stack includes React 18, Next.js, Node.js, Express, PostgreSQL, Redis, Docker, Kubernetes, GitHub Actions, Terraform, Datadog. We offer competitive salary, equity, unlimited PTO, and a hybrid work model with offices in San Francisco, New York, and Austin. We are committed to building an inclusive workplace and encourage candidates from all backgrounds to apply. Our engineering culture emphasizes code quality, thorough code reviews, comprehensive documentation, and knowledge sharing through tech talks and internal blog posts."
+  }
+]
