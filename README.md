@@ -1,4 +1,5 @@
 # HireMe.AI
+By: @sidagarwal-labs & @jeffsengsy
 
 An AI-powered resume & cover letter builder with integrated job search. Upload your resume, paste a job description, and get tailored documents — or search across multiple job boards and let RAG rank the best matches.
 
@@ -12,6 +13,23 @@ An AI-powered resume & cover letter builder with integrated job search. Upload y
 2. **Document Generation** — Combines your profile + a job description + markdown templates → generates a tailored resume and cover letter via parallel LLM calls
 3. **Job Search** — Natural language search across Adzuna, The Muse, and JobSpy → results ranked using hybrid BM25 + FAISS with Reciprocal Rank Fusion (RRF)
 4. **One-Click Tailoring** — Select a job from search results → auto-fills the resume builder for instant tailoring
+
+---
+
+## Evaluation Results
+
+Ran a full evaluation suite with LLM-as-judge scoring + deterministic metrics:
+
+| Metric | Resume | Cover Letter |
+|---|---|---|
+| Faithfulness (0–10) | 6.5 | 5.5 |
+| Coherence (0–10) | 8.3 | 7.1 |
+| Completeness (0–1) | 0.93 | — |
+| Template Adherence (0–1) | 0.95+ | 0.95+ |
+
+**A/B Test:** gpt-4.1-nano beat gpt-4.1-mini on quality, relevance, and faithfulness while being 2× faster
+
+**Known limitation:** Empty/minimal candidate profiles cause hallucination — the model invents credentials when given no data.
 
 ---
 
@@ -65,37 +83,14 @@ Job Search Flow:
 
 ---
 
-## Project Structure
+## What we Learned
 
-```
-├── Resume_CV_Tailor.py        # Main Streamlit app (resume builder UI)
-├── pages/
-│   └── 1_Job_Search.py        # Job search page with RAG ranking
-├── HireMe.AI-V1/              # Core logic
-│   ├── models.py              # Pydantic data schemas
-│   ├── agents.py              # LLM factory (parser, resume writer, cover letter writer)
-│   ├── doc_parser.py          # Resume parsing pipeline (PDF/DOCX/TXT → JSON)
-│   ├── prompts.py             # Prompt templates with injection defense
-│   ├── rag.py                 # Hybrid BM25 + FAISS ranking with RRF
-│   ├── service.py             # Generation orchestrator (parallel LLM calls)
-│   ├── tools.py               # Output formatting / cleanup
-│   ├── tools_llm.py           # LLM tool calling (keyword extraction, location stripping)
-│   └── Templates/             # Markdown templates for resume & cover letter
-├── Random-Testing/Search-Tool/ # Job search agent + API wrappers
-│   ├── job_search_agent.py    # LangChain agent that routes to APIs
-│   ├── adzuna_tool.py         # Adzuna API tool
-│   ├── muse_tool.py           # The Muse API tool
-│   └── jobspy_tool.py         # python-jobspy scraper tool
-├── evaluation/                # Evaluation suite
-│   ├── run_all.py             # Runner for all eval suites
-│   ├── metrics.py             # LLM-as-judge + deterministic metrics
-│   ├── eval_parser.py         # Parser accuracy evaluation
-│   ├── eval_generator.py      # Generation quality evaluation
-│   ├── eval_rag.py            # RAG ranking evaluation (NDCG, MRR, P@3)
-│   ├── ab_testing.py          # A/B testing framework (model comparison)
-│   └── results/               # Evaluation reports
-└── notebooks/                 # Development notebooks
-```
+- Building end-to-end LLM applications with structured outputs (Pydantic + LangChain)
+- Hybrid retrieval (BM25 + dense embeddings + RRF) for ranking without a traditional vector DB
+- Prompt engineering for faithfulness — explicit anti-hallucination instructions matter
+- LLM-as-judge evaluation — using one model to score another's outputs
+- Agentic tool use — letting the LLM decide which APIs to call based on user intent
+- Streamlit session state management for multi-page apps with shared data
 
 ---
 
@@ -128,56 +123,3 @@ Job Search Flow:
 - Optional LLM tool calling loop for keyword extraction and location normalization
 
 ---
-
-## Evaluation Results
-
-Ran a full evaluation suite with LLM-as-judge scoring + deterministic metrics:
-
-| Metric | Resume | Cover Letter |
-|---|---|---|
-| Faithfulness (0–10) | 6.5 | 5.5 |
-| Coherence (0–10) | 8.3 | 7.1 |
-| Completeness (0–1) | 0.93 | — |
-| Template Adherence (0–1) | 0.95+ | 0.95+ |
-
-**Parser:** 100% field-level accuracy on test resumes
-
-**RAG Ranking:** NDCG@3 = 1.0, MRR = 1.0, Precision@3 = 1.0 (synthetic test set)
-
-**A/B Test:** gpt-4.1-nano beat gpt-4.1-mini on quality, relevance, and faithfulness while being 2× faster
-
-**Known limitation:** Empty/minimal candidate profiles cause hallucination — the model invents credentials when given no data.
-
-Full report: [evaluation/results/EVALUATION_REPORT.md](evaluation/results/EVALUATION_REPORT.md)
-
----
-
-## Setup
-
-```bash
-# Clone
-git clone https://github.com/<your-username>/HireMe-AI.git
-cd HireMe-AI
-
-# Install
-pip install -r requirements.txt
-
-# Set environment variables (.env file)
-OPENAI_API_KEY=...
-ADZUNA_APP_ID=...
-ADZUNA_APP_KEY=...
-
-# Run
-streamlit run Resume_CV_Tailor.py
-```
-
----
-
-## What I Learned
-
-- Building end-to-end LLM applications with structured outputs (Pydantic + LangChain)
-- Hybrid retrieval (BM25 + dense embeddings + RRF) for ranking without a traditional vector DB
-- Prompt engineering for faithfulness — explicit anti-hallucination instructions matter
-- LLM-as-judge evaluation — using one model to score another's outputs
-- Agentic tool use — letting the LLM decide which APIs to call based on user intent
-- Streamlit session state management for multi-page apps with shared data
