@@ -32,6 +32,7 @@ def generate_documents(
     resume_template_path: str | Path,
     cover_template_path: str | Path,
     use_tool_calling: bool = False,
+    temperature: float = 0.3,
 ) -> dict[str, str]:
     """
     Main pipeline:
@@ -49,8 +50,8 @@ def generate_documents(
     resume_prompt = build_resume_prompt(profile, job, resume_template)
     cover_prompt = build_cover_letter_prompt(profile, job, cover_template)
 
-    resume_llm = make_resume_writer_llm()
-    cover_llm = make_cover_letter_writer_llm()
+    resume_llm = make_resume_writer_llm(temperature=temperature)
+    cover_llm = make_cover_letter_writer_llm(temperature=temperature)
 
     if use_tool_calling:
         with concurrent.futures.ThreadPoolExecutor(max_workers=2) as executor:

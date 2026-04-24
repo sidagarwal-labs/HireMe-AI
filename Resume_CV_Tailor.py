@@ -115,6 +115,7 @@ def _init_session_state() -> None:
         "job_search_ranked": [],
         "job_search_raw_count": 0,
         "job_search_top_n": 10,
+        "creativity_level": 0.3,
         "manual_name": "",
         "manual_email": "",
         "manual_phone": "",
@@ -489,6 +490,23 @@ def main() -> None:
             key="job_description_input",
             on_change=_sync_job_inputs_to_state,
         )
+        st.markdown("---")
+        st.markdown("**How creative should the writing be?**")
+        creativity_col1, creativity_col2, creativity_col3 = st.columns([1, 3, 1])
+        with creativity_col1:
+            st.caption("Precise")
+        with creativity_col2:
+            st.slider(
+                "Creativity",
+                min_value=0.0,
+                max_value=1.0,
+                step=0.1,
+                key="creativity_level",
+                label_visibility="collapsed",
+                help="Low = consistent, close to your exact words. High = more varied and expressive phrasing.",
+            )
+        with creativity_col3:
+            st.caption("Creative")
         generate_clicked = st.button("Generate Documents")
         st.markdown("</div>", unsafe_allow_html=True)
 
@@ -572,6 +590,7 @@ def main() -> None:
                     },
                     resume_template_path=PROJECT_DIR / "Templates" / "resume_template.md",
                     cover_template_path=PROJECT_DIR / "Templates" / "cover_letter_template.md",
+                    temperature=st.session_state.creativity_level,
                 )
 
             progress_bar.progress(90, text="Formatting generated documents...")
