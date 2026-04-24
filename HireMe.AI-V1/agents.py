@@ -4,7 +4,7 @@ from langchain_openai import ChatOpenAI
 def _make_llm(model_env: str):
     return ChatOpenAI(
         api_key=os.getenv("OPENAI_API_KEY"),
-        model=os.getenv(model_env, "gpt-5-nano"),
+        model=os.getenv(model_env, "gpt-4.1-nano"),
         temperature=0.2
     )
 

@@ -96,7 +96,7 @@ def _inject_styles() -> None:
 
 
 def _init_session_state() -> None:
-    defaults = {
+    defaults: dict[str, Any] = {
         "intake_mode": "Upload Resume",
         "resume_bytes": None,
         "resume_name": "",
@@ -123,20 +123,14 @@ def _init_session_state() -> None:
         "manual_technical_skills": "",
         "manual_tools_skills": "",
         "manual_soft_skills": "",
-        "manual_work_title": "",
-        "manual_work_company": "",
-        "manual_work_start": "",
-        "manual_work_end": "",
-        "manual_work_bullets": "",
-        "manual_education_degree": "",
-        "manual_education_school": "",
-        "manual_education_start": "",
-        "manual_education_end": "",
-        "manual_education_details": "",
-        "manual_project_name": "",
-        "manual_project_bullets": "",
         "manual_certifications": "",
         "manual_awards": "",
+        # List-based entries — each dict holds the field values directly so
+        # they survive page-navigation and mode-switch (widget keys are volatile;
+        # the dicts are the stable source of truth).
+        "manual_work_entries": [{"title": "", "company": "", "start": "", "end": "", "bullets": ""}],
+        "manual_education_entries": [{"degree": "", "school": "", "start": "", "end": "", "details": ""}],
+        "manual_project_entries": [{"name": "", "bullets": ""}],
     }
     for key, value in defaults.items():
         if key not in st.session_state:
@@ -153,39 +147,184 @@ def _split_lines(value: str) -> list[str]:
     return [line.strip(" -\t") for line in value.splitlines() if line.strip(" -\t")]
 
 
+# ── Entry list helpers ────────────────────────────────────────────
+
+_WORK_FIELDS = ["title", "company", "start", "end", "bullets"]
+_EDU_FIELDS = ["degree", "school", "start", "end", "details"]
+_PROJ_FIELDS = ["name", "bullets"]
+
+_EMPTY_WORK = lambda: {"title": "", "company": "", "start": "", "end": "", "bullets": ""}
+_EMPTY_EDU = lambda: {"degree": "", "school": "", "start": "", "end": "", "details": ""}
+_EMPTY_PROJ = lambda: {"name": "", "bullets": ""}
+
+
+def _sync_widgets_to_entries() -> None:
+    """Pull live widget values into the entry dicts (stable backing storage)."""
+    for i, entry in enumerate(st.session_state.manual_work_entries):
+        for field in _WORK_FIELDS:
+            entry[field] = st.session_state.get(f"wexp_{i}_{field}", entry.get(field, ""))
+    for i, entry in enumerate(st.session_state.manual_education_entries):
+        for field in _EDU_FIELDS:
+            entry[field] = st.session_state.get(f"edu_{i}_{field}", entry.get(field, ""))
+    for i, entry in enumerate(st.session_state.manual_project_entries):
+        for field in _PROJ_FIELDS:
+            entry[field] = st.session_state.get(f"proj_{i}_{field}", entry.get(field, ""))
+
+
+def _restore_widget_keys() -> None:
+    """Seed any missing widget keys from the entry dicts.
+
+    Widget keys are cleared by Streamlit when toggling intake mode or
+    navigating between pages. This restores them so the inputs re-render
+    with the user's last values instead of going blank.
+    """
+    for i, entry in enumerate(st.session_state.manual_work_entries):
+        for field in _WORK_FIELDS:
+            key = f"wexp_{i}_{field}"
+            if key not in st.session_state:
+                st.session_state[key] = entry.get(field, "")
+    for i, entry in enumerate(st.session_state.manual_education_entries):
+        for field in _EDU_FIELDS:
+            key = f"edu_{i}_{field}"
+            if key not in st.session_state:
+                st.session_state[key] = entry.get(field, "")
+    for i, entry in enumerate(st.session_state.manual_project_entries):
+        for field in _PROJ_FIELDS:
+            key = f"proj_{i}_{field}"
+            if key not in st.session_state:
+                st.session_state[key] = entry.get(field, "")
+
+
+def _clear_indexed_widget_keys(prefix: str, fields: list[str], count: int) -> None:
+    for i in range(count):
+        for field in fields:
+            st.session_state.pop(f"{prefix}_{i}_{field}", None)
+
+
+def _render_work_entries() -> None:
+    entries = st.session_state.manual_work_entries
+    n = len(entries)
+    for i in range(n):
+        if n > 1:
+            st.markdown(f"**Experience {i + 1}**")
+        meta_col, dates_col = st.columns(2)
+        with meta_col:
+            st.text_input("Role title", key=f"wexp_{i}_title")
+            st.text_input("Company", key=f"wexp_{i}_company")
+        with dates_col:
+            st.text_input("Start date", key=f"wexp_{i}_start")
+            st.text_input("End date", key=f"wexp_{i}_end")
+        st.text_area("Work bullets", key=f"wexp_{i}_bullets", height=110)
+        if n > 1:
+            if st.button("Remove this experience", key=f"remove_work_{i}"):
+                _sync_widgets_to_entries()
+                _clear_indexed_widget_keys("wexp", _WORK_FIELDS, n)
+                st.session_state.manual_work_entries.pop(i)
+                st.rerun()
+        if i < n - 1:
+            st.divider()
+
+    if st.button("+ Add Work Experience"):
+        _sync_widgets_to_entries()
+        st.session_state.manual_work_entries.append(_EMPTY_WORK())
+        st.rerun()
+
+
+def _render_education_entries() -> None:
+    entries = st.session_state.manual_education_entries
+    n = len(entries)
+    for i in range(n):
+        if n > 1:
+            st.markdown(f"**Education {i + 1}**")
+        meta_col, dates_col = st.columns(2)
+        with meta_col:
+            st.text_input("Degree", key=f"edu_{i}_degree")
+            st.text_input("School", key=f"edu_{i}_school")
+        with dates_col:
+            st.text_input("Education start", key=f"edu_{i}_start")
+            st.text_input("Education end", key=f"edu_{i}_end")
+        st.text_area("Education details", key=f"edu_{i}_details", height=90)
+        if n > 1:
+            if st.button("Remove this education", key=f"remove_edu_{i}"):
+                _sync_widgets_to_entries()
+                _clear_indexed_widget_keys("edu", _EDU_FIELDS, n)
+                st.session_state.manual_education_entries.pop(i)
+                st.rerun()
+        if i < n - 1:
+            st.divider()
+
+    if st.button("+ Add Education"):
+        _sync_widgets_to_entries()
+        st.session_state.manual_education_entries.append(_EMPTY_EDU())
+        st.rerun()
+
+
+def _render_project_entries() -> None:
+    entries = st.session_state.manual_project_entries
+    n = len(entries)
+    for i in range(n):
+        if n > 1:
+            st.markdown(f"**Project {i + 1}**")
+        st.text_input("Project name", key=f"proj_{i}_name")
+        st.text_area("Project bullets", key=f"proj_{i}_bullets", height=90)
+        if n > 1:
+            if st.button("Remove this project", key=f"remove_proj_{i}"):
+                _sync_widgets_to_entries()
+                _clear_indexed_widget_keys("proj", _PROJ_FIELDS, n)
+                st.session_state.manual_project_entries.pop(i)
+                st.rerun()
+        if i < n - 1:
+            st.divider()
+
+    if st.button("+ Add Project"):
+        _sync_widgets_to_entries()
+        st.session_state.manual_project_entries.append(_EMPTY_PROJ())
+        st.rerun()
+
+
 def _build_manual_candidate_profile() -> dict[str, Any]:
+    _sync_widgets_to_entries()
+
     work_experience = []
-    if st.session_state.manual_work_title.strip() or st.session_state.manual_work_company.strip():
-        work_experience.append(
-            {
-                "job_title": st.session_state.manual_work_title.strip(),
-                "company": st.session_state.manual_work_company.strip(),
-                "start_date": st.session_state.manual_work_start.strip(),
-                "end_date": st.session_state.manual_work_end.strip(),
-                "bullets": _split_lines(st.session_state.manual_work_bullets),
-            }
-        )
+    for entry in st.session_state.manual_work_entries:
+        title = entry.get("title", "").strip()
+        company = entry.get("company", "").strip()
+        if title or company:
+            work_experience.append(
+                {
+                    "job_title": title,
+                    "company": company,
+                    "start_date": entry.get("start", "").strip(),
+                    "end_date": entry.get("end", "").strip(),
+                    "bullets": _split_lines(entry.get("bullets", "")),
+                }
+            )
 
     education = []
-    if st.session_state.manual_education_degree.strip() or st.session_state.manual_education_school.strip():
-        education.append(
-            {
-                "degree": st.session_state.manual_education_degree.strip(),
-                "school": st.session_state.manual_education_school.strip(),
-                "start_date": st.session_state.manual_education_start.strip(),
-                "end_date": st.session_state.manual_education_end.strip(),
-                "details": _split_lines(st.session_state.manual_education_details),
-            }
-        )
+    for entry in st.session_state.manual_education_entries:
+        degree = entry.get("degree", "").strip()
+        school = entry.get("school", "").strip()
+        if degree or school:
+            education.append(
+                {
+                    "degree": degree,
+                    "school": school,
+                    "start_date": entry.get("start", "").strip(),
+                    "end_date": entry.get("end", "").strip(),
+                    "details": _split_lines(entry.get("details", "")),
+                }
+            )
 
     projects = []
-    if st.session_state.manual_project_name.strip():
-        projects.append(
-            {
-                "project_name": st.session_state.manual_project_name.strip(),
-                "bullets": _split_lines(st.session_state.manual_project_bullets),
-            }
-        )
+    for entry in st.session_state.manual_project_entries:
+        name = entry.get("name", "").strip()
+        if name:
+            projects.append(
+                {
+                    "project_name": name,
+                    "bullets": _split_lines(entry.get("bullets", "")),
+                }
+            )
 
     certifications = [
         {"name": item} for item in _split_lines(st.session_state.manual_certifications)
@@ -305,6 +444,9 @@ def main() -> None:
 
             parse_clicked = st.button("Parse Resume")
         else:
+            _sync_widgets_to_entries()
+            _restore_widget_keys()
+
             contact_col, links_col = st.columns(2)
             with contact_col:
                 st.text_input("Full name", key="manual_name")
@@ -323,30 +465,15 @@ def main() -> None:
                 st.text_area("Soft skills", key="manual_soft_skills", height=120)
 
             st.markdown("#### Work Experience")
-            work_meta_col, work_dates_col = st.columns(2)
-            with work_meta_col:
-                st.text_input("Role title", key="manual_work_title")
-                st.text_input("Company", key="manual_work_company")
-            with work_dates_col:
-                st.text_input("Start date", key="manual_work_start")
-                st.text_input("End date", key="manual_work_end")
-            st.text_area("Work bullets", key="manual_work_bullets", height=110)
+            _render_work_entries()
 
             st.markdown("#### Education")
-            edu_meta_col, edu_dates_col = st.columns(2)
-            with edu_meta_col:
-                st.text_input("Degree", key="manual_education_degree")
-                st.text_input("School", key="manual_education_school")
-            with edu_dates_col:
-                st.text_input("Education start", key="manual_education_start")
-                st.text_input("Education end", key="manual_education_end")
-            st.text_area("Education details", key="manual_education_details", height=90)
+            _render_education_entries()
 
             st.markdown("#### Projects And Extras")
             project_col, extras_col = st.columns(2)
             with project_col:
-                st.text_input("Project name", key="manual_project_name")
-                st.text_area("Project bullets", key="manual_project_bullets", height=90)
+                _render_project_entries()
             with extras_col:
                 st.text_area("Certifications", key="manual_certifications", height=90)
                 st.text_area("Awards", key="manual_awards", height=90)
