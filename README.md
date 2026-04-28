@@ -3,7 +3,7 @@ By: @sidagarwal-labs & @jeffsengsy
 
 An AI-powered resume & cover letter builder with integrated job search. Upload your resume, paste a job description, and get tailored documents — or search across multiple job boards and let RAG rank the best matches.
 
-**Live App:** https://hireme-ai.streamlit.app/
+**Live App:** [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://YOUR-APP-URL.streamlit.app](https://hireme-ai.streamlit.app/))
 
 ---
 
