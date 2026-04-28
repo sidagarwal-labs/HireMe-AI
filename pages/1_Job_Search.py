@@ -36,56 +36,133 @@ def _inject_styles() -> None:
     st.markdown(
         """
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
-        .stApp {
-            background:
-                radial-gradient(circle at top right, rgba(255, 228, 201, 0.9), transparent 30%),
-                linear-gradient(180deg, #f7f3eb 0%, #f2efe7 100%);
-        }
+        /* ── Base ─────────────────────────────────────────────── */
+        .stApp { background: #f8fafc; }
 
-        h1, h2, h3 {
+        /* ── Typography ───────────────────────────────────────── */
+        h1, h2, h3, h4 {
             font-family: "Space Grotesk", sans-serif;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+        }
+        p, li, label, .stMarkdown, .stCaption {
+            font-family: "Inter", sans-serif;
+        }
+
+        /* ── App header ───────────────────────────────────────── */
+        .app-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.06) 0%, rgba(248, 250, 252, 0) 60%);
+            border: 1px solid rgba(79, 70, 229, 0.14);
+            border-radius: 14px;
+            padding: 1.1rem 1.4rem;
+            margin-bottom: 1.25rem;
+        }
+        .app-name {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
             letter-spacing: -0.03em;
+            line-height: 1;
+        }
+        .app-tagline {
+            font-family: "Inter", sans-serif;
+            font-size: 0.875rem;
+            color: #94a3b8;
         }
 
-        p, li, label, .stMarkdown, .stTextArea {
-            font-family: "Source Serif 4", serif;
-        }
-
-        .hero-card, .panel-card {
-            background: rgba(255, 252, 246, 0.88);
-            border: 1px solid rgba(53, 71, 92, 0.12);
-            border-radius: 22px;
-            box-shadow: 0 18px 50px rgba(53, 71, 92, 0.08);
-            padding: 1.25rem 1.35rem;
-        }
-
-        .hero-title {
-            font-size: 2.4rem;
-            line-height: 0.98;
+        /* ── Cards ────────────────────────────────────────────── */
+        .app-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 2px solid #4f46e5;
+            border-radius: 12px;
+            box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+            padding: 1.5rem;
             margin-bottom: 0.5rem;
         }
-
-        .hero-kicker {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 0.88rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
+        .section-label {
+            font-family: "Inter", sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.09em;
             text-transform: uppercase;
-            color: #9d5c34;
-            margin-bottom: 0.35rem;
+            color: #6366f1;
+            margin-bottom: 0.6rem;
+            margin-top: 0;
         }
 
-        .stButton > button {
-            background: linear-gradient(135deg, #203a4d 0%, #355e74 100%);
-            color: #fffaf0;
-            border: 0;
-            border-radius: 999px;
-            padding: 0.7rem 1.2rem;
-            font-family: "Space Grotesk", sans-serif;
-            font-weight: 700;
+        /* ── Job result card ──────────────────────────────────── */
+        .job-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.6rem;
+            transition: box-shadow 0.15s;
         }
+        .job-card:hover { box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08); }
+        .job-rank {
+            font-family: "Inter", sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+        .job-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin: 2px 0;
+        }
+        .job-meta {
+            font-family: "Inter", sans-serif;
+            font-size: 0.82rem;
+            color: #64748b;
+        }
+
+        /* ── Buttons ──────────────────────────────────────────── */
+        .stButton > button, .stDownloadButton > button {
+            background: #4f46e5;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.55rem 1.1rem;
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: none;
+        }
+        .stButton > button:hover, .stDownloadButton > button:hover {
+            background: #4338ca;
+            border: none;
+        }
+
+        /* ── Inputs ───────────────────────────────────────────── */
+        .stTextInput input, .stTextArea textarea {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: "Inter", sans-serif;
+            color: #0f172a;
+            font-size: 0.9rem;
+        }
+
+        /* ── Sidebar ──────────────────────────────────────────── */
+        section[data-testid="stSidebar"] {
+            background: #ffffff;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        /* ── Divider ──────────────────────────────────────────── */
+        hr { border-color: #e2e8f0; }
         </style>
         """,
         unsafe_allow_html=True,
@@ -162,7 +239,7 @@ def _extract_html_candidates(page_html: str) -> list[str]:
     ):
         candidates.append(match)
 
-    return [_normalize_text(candidate) for candidate in candidates if _normalize_text(candidate)]
+    return [_normalize_text(c) for c in candidates if _normalize_text(c)]
 
 
 def _looks_more_complete(candidate: str, fallback: str) -> bool:
@@ -170,15 +247,12 @@ def _looks_more_complete(candidate: str, fallback: str) -> bool:
         return False
     if len(candidate) < max(700, len(fallback) + 150):
         return False
-    if candidate == fallback:
-        return False
-    return True
+    return candidate != fallback
 
 
 def _fetch_full_job_description(url: str, fallback: str) -> str:
     if not url:
         return fallback
-
     try:
         response = requests.get(
             url,
@@ -204,15 +278,15 @@ def _fetch_full_job_description(url: str, fallback: str) -> str:
 
 
 def main() -> None:
-    st.set_page_config(page_title="HireMe.AI Job Search", layout="wide")
+    st.set_page_config(page_title="HireMe.AI — Job Search", layout="wide")
     _init_session_state()
     _inject_styles()
+
     st.markdown(
         """
-        <div class="hero-card">
-            <div class="hero-kicker">Discovery Layer</div>
-            <div class="hero-title">Job Search</div>
-            <p>Use the existing search agent to find roles, then move the results back into the document generator.</p>
+        <div class="app-header">
+            <span class="app-name">HireMe<span style="color:#4f46e5">.AI</span></span>
+            <span class="app-tagline">Find and rank open roles, then send them to the resume builder.</span>
         </div>
         """,
         unsafe_allow_html=True,
@@ -223,27 +297,30 @@ def main() -> None:
         st.code("pip install python-jobspy rank-bm25 faiss-cpu")
         st.stop()
 
-    input_col, info_col = st.columns([1.5, 0.8], gap="large")
+    search_col, status_col = st.columns([1.5, 0.8], gap="large")
 
-    with input_col:
-        st.markdown('<div class="panel-card">', unsafe_allow_html=True)
+    with search_col:
+        st.markdown('<div class="app-card">', unsafe_allow_html=True)
+        st.markdown('<p class="section-label">Search Query</p>', unsafe_allow_html=True)
         query = st.text_area(
-            "Search query",
+            "Query",
             key="job_search_query",
-            height=120,
+            height=100,
+            label_visibility="collapsed",
         )
         top_n = st.slider(
-            "Number of results to show",
+            "Results to show",
             min_value=5,
             max_value=30,
             key="job_search_top_n",
         )
+        search_clicked = st.button("Search Jobs", type="primary")
+        st.markdown("</div>", unsafe_allow_html=True)
 
-        if st.button("Search Jobs", type="primary"):
+        if search_clicked:
             if not query.strip():
                 st.error("Please enter a search query.")
                 st.stop()
-
             try:
                 with st.spinner("Searching jobs..."):
                     summary, raw_jobs = search_jobs(query)
@@ -257,59 +334,94 @@ def main() -> None:
                     st.session_state.job_search_ranked = []
             except Exception as exc:
                 st.error(str(exc))
-        st.markdown("</div>", unsafe_allow_html=True)
 
-    with info_col:
-        st.markdown('<div class="panel-card">', unsafe_allow_html=True)
-        st.markdown("### Current Session")
-        st.metric("Last Query", "Ready" if st.session_state.job_search_query.strip() else "Empty")
-        st.metric("Results", "Ready" if st.session_state.job_search_results else "Not fetched")
-        st.metric("Main App JD", "Filled" if st.session_state.get("job_description", "").strip() else "Empty")
-        st.markdown("</div>", unsafe_allow_html=True)
+    with status_col:
+        def _status_row(label: str, value: str, highlight: bool = False) -> str:
+            color = "#4f46e5" if highlight else "#0f172a"
+            return f"""
+            <div style="display:flex;justify-content:space-between;align-items:center;
+                        padding:9px 0;border-bottom:1px solid #f8fafc;">
+                <span style="font-family:Inter,sans-serif;font-size:0.82rem;color:#64748b;">{label}</span>
+                <span style="font-family:Inter,sans-serif;font-size:0.82rem;font-weight:600;color:{color};">{value}</span>
+            </div>"""
+
+        has_results = bool(st.session_state.job_search_results)
+        jd_filled = bool(st.session_state.get("job_description", "").strip())
+        raw_count = st.session_state.get("job_search_raw_count", 0)
+
+        rows = (
+            _status_row("Last query", "Set" if st.session_state.job_search_query.strip() else "—")
+            + _status_row("Results fetched", str(raw_count) if raw_count else "—", highlight=has_results)
+            + _status_row("Builder JD", "✓ Filled" if jd_filled else "Empty", highlight=jd_filled)
+        )
+        st.markdown(
+            f'<div class="app-card"><p class="section-label">Search Status</p>{rows}</div>',
+            unsafe_allow_html=True,
+        )
 
     ranked = st.session_state.get("job_search_ranked", [])
     if ranked:
-        st.markdown('<div class="panel-card">', unsafe_allow_html=True)
         raw_count = st.session_state.get("job_search_raw_count", 0)
-        st.subheader(f"Top {len(ranked)} of {raw_count} Results")
+        st.markdown(
+            f'<p style="font-family:Inter,sans-serif;font-size:0.85rem;color:#64748b;margin:1rem 0 0.5rem;">'
+            f'Showing top <strong style="color:#0f172a;">{len(ranked)}</strong> of '
+            f'<strong style="color:#0f172a;">{raw_count}</strong> results</p>',
+            unsafe_allow_html=True,
+        )
 
         for i, job in enumerate(ranked, 1):
-            label = f"**{i}. {job.title}** — {job.company}"
-            if job.source:
-                label += f"  _{job.source}_"
+            source_badge = (
+                f'<span style="font-size:0.72rem;font-weight:600;color:#94a3b8;'
+                f'text-transform:uppercase;letter-spacing:0.05em;">{job.source}</span>'
+                if job.source else ""
+            )
+            meta_parts = [p for p in [job.location, job.salary] if p]
+            meta_str = " · ".join(meta_parts) if meta_parts else ""
 
-            with st.expander(label, expanded=(i <= 3)):
-                cols = st.columns([3, 1])
-                with cols[0]:
-                    if job.location:
-                        st.markdown(f"Location: {job.location}")
-                    if job.salary:
-                        st.markdown(f"Salary: {job.salary}")
-                with cols[1]:
-                    if job.url:
-                        st.link_button("View Job", job.url)
+            with st.expander(f"{i}. {job.title} — {job.company}", expanded=(i <= 3)):
+                st.markdown(
+                    f"""
+                    <div style="margin-bottom:0.75rem;">
+                        {source_badge}
+                        {f'<p style="font-family:Inter,sans-serif;font-size:0.83rem;color:#64748b;margin:4px 0 0;">{meta_str}</p>' if meta_str else ""}
+                    </div>
+                    """,
+                    unsafe_allow_html=True,
+                )
 
                 desc = job.description
                 if len(desc) > 600:
-                    desc = desc[:600] + "..."
-                st.markdown(desc)
-                if st.button("Use In Resume Builder", key=f"use_job_{i}"):
-                    with st.spinner("Loading the full job description..."):
-                        full_description = _fetch_full_job_description(job.url, job.description)
-                    st.session_state.job_title = job.title
-                    st.session_state.company_name = job.company
-                    st.session_state.job_description = full_description
-                    st.session_state.job_title_input = job.title
-                    st.session_state.company_name_input = job.company
-                    st.session_state.job_description_input = full_description
-                    st.session_state.job_builder_prefill_pending = True
-                    st.success("Sent this job to the resume builder.")
+                    desc = desc[:600] + "…"
+                st.markdown(
+                    f'<p style="font-family:Inter,sans-serif;font-size:0.875rem;color:#374151;'
+                    f'line-height:1.6;">{desc}</p>',
+                    unsafe_allow_html=True,
+                )
 
-        st.markdown("</div>", unsafe_allow_html=True)
+                btn_col, link_col = st.columns([2, 1])
+                with btn_col:
+                    if st.button("Use in Resume Builder", key=f"use_job_{i}"):
+                        with st.spinner("Loading full job description..."):
+                            full_description = _fetch_full_job_description(job.url, job.description)
+                        st.session_state.job_title = job.title
+                        st.session_state.company_name = job.company
+                        st.session_state.job_description = full_description
+                        st.session_state.job_title_input = job.title
+                        st.session_state.company_name_input = job.company
+                        st.session_state.job_description_input = full_description
+                        st.session_state.job_builder_prefill_pending = True
+                        st.success("Sent to resume builder.")
+                with link_col:
+                    if job.url:
+                        st.link_button("View posting →", job.url)
 
     if st.session_state.job_search_results:
-        with st.expander("Agent Summary", expanded=False):
-            st.write(st.session_state.job_search_results)
+        with st.expander("Agent summary", expanded=False):
+            st.markdown(
+                f'<p style="font-family:Inter,sans-serif;font-size:0.875rem;color:#374151;">'
+                f'{st.session_state.job_search_results}</p>',
+                unsafe_allow_html=True,
+            )
 
 
 if __name__ == "__main__":

@@ -9,6 +9,27 @@ from typing import Any
 import streamlit as st
 
 REPO_ROOT = Path(__file__).resolve().parent
+
+
+@st.cache_data(show_spinner=False)
+def _to_docx_bytes(markdown_text: str) -> bytes:
+    import pypandoc
+    try:
+        pypandoc.get_pandoc_version()
+    except OSError:
+        # pandoc binary not on PATH — download it once (Streamlit Cloud
+        # installs it via packages.txt; this fallback covers other hosts)
+        pypandoc.download_pandoc()
+    with tempfile.NamedTemporaryFile(suffix=".docx", delete=False) as tmp:
+        tmp_path = tmp.name
+    try:
+        pypandoc.convert_text(markdown_text, "docx", format="md", outputfile=tmp_path)
+        return Path(tmp_path).read_bytes()
+    finally:
+        try:
+            Path(tmp_path).unlink()
+        except OSError:
+            pass
 PROJECT_DIR = REPO_ROOT / "HireMe.AI-V1"
 if str(PROJECT_DIR) not in sys.path:
     sys.path.insert(0, str(PROJECT_DIR))
@@ -22,73 +43,134 @@ def _inject_styles() -> None:
     st.markdown(
         """
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:wght@400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap');
 
-        .stApp {
-            background:
-                radial-gradient(circle at top left, rgba(214, 233, 255, 0.9), transparent 30%),
-                linear-gradient(180deg, #f7f3eb 0%, #f2efe7 100%);
-        }
+        /* ── Base ─────────────────────────────────────────────── */
+        .stApp { background: #f8fafc; }
 
-        h1, h2, h3 {
+        /* ── Typography ───────────────────────────────────────── */
+        h1, h2, h3, h4 {
             font-family: "Space Grotesk", sans-serif;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+        }
+        p, li, label, .stMarkdown, .stCaption {
+            font-family: "Inter", sans-serif;
+        }
+
+        /* ── App header ───────────────────────────────────────── */
+        .app-header {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.06) 0%, rgba(248, 250, 252, 0) 60%);
+            border: 1px solid rgba(79, 70, 229, 0.14);
+            border-radius: 14px;
+            padding: 1.1rem 1.4rem;
+            margin-bottom: 1.25rem;
+        }
+        .app-name {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #0f172a;
             letter-spacing: -0.03em;
+            line-height: 1;
+        }
+        .app-tagline {
+            font-family: "Inter", sans-serif;
+            font-size: 0.875rem;
+            color: #94a3b8;
         }
 
-        p, li, label, .stMarkdown, .stTextInput, .stTextArea {
-            font-family: "Source Serif 4", serif;
-        }
-
-        .hero-card, .panel-card {
-            background: rgba(255, 252, 246, 0.88);
-            border: 1px solid rgba(53, 71, 92, 0.12);
-            border-radius: 22px;
-            box-shadow: 0 18px 50px rgba(53, 71, 92, 0.08);
-            padding: 1.25rem 1.35rem;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            line-height: 0.95;
+        /* ── Cards ────────────────────────────────────────────── */
+        .app-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: 2px solid #4f46e5;
+            border-radius: 12px;
+            box-shadow: 0 1px 4px rgba(15, 23, 42, 0.05);
+            padding: 1.5rem;
             margin-bottom: 0.5rem;
         }
-
-        .hero-kicker {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 0.9rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
+        .section-label {
+            font-family: "Inter", sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.09em;
             text-transform: uppercase;
-            color: #9d5c34;
-            margin-bottom: 0.35rem;
+            color: #6366f1;
+            margin-bottom: 0.6rem;
+            margin-top: 0;
         }
 
-        .muted-note {
-            color: #5e6773;
-            font-size: 0.96rem;
-        }
-
+        /* ── Buttons ──────────────────────────────────────────── */
         .stButton > button, .stDownloadButton > button {
-            background: linear-gradient(135deg, #203a4d 0%, #355e74 100%);
-            color: #fffaf0;
-            border: 0;
-            border-radius: 999px;
-            padding: 0.7rem 1.2rem;
-            font-family: "Space Grotesk", sans-serif;
-            font-weight: 700;
+            background: #4f46e5;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.55rem 1.1rem;
+            font-family: "Inter", sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            box-shadow: none;
+            transition: background 0.15s;
+        }
+        .stButton > button:hover, .stDownloadButton > button:hover {
+            background: #4338ca;
+            border: none;
         }
 
+        /* ── Inputs ───────────────────────────────────────────── */
         .stTextInput input, .stTextArea textarea {
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-family: "Inter", sans-serif;
+            color: #0f172a;
+            font-size: 0.9rem;
+        }
+        .stTextInput input:focus, .stTextArea textarea:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.08);
         }
 
+        /* ── File uploader ────────────────────────────────────── */
         div[data-testid="stFileUploader"] {
-            background: rgba(255, 252, 246, 0.88);
-            border: 1px dashed rgba(53, 71, 92, 0.25);
-            border-radius: 18px;
-            padding: 0.8rem;
+            background: #f8fafc;
+            border: 1.5px dashed #cbd5e1;
+            border-radius: 10px;
+            padding: 0.75rem;
         }
+
+        /* ── Sidebar ──────────────────────────────────────────── */
+        section[data-testid="stSidebar"] {
+            background: #ffffff;
+            border-right: 1px solid #e2e8f0;
+        }
+        section[data-testid="stSidebar"] .stMarkdown p {
+            font-family: "Inter", sans-serif;
+            font-size: 0.85rem;
+            color: #475569;
+        }
+
+        /* ── Tabs ─────────────────────────────────────────────── */
+        .stTabs [data-baseweb="tab"] {
+            font-family: "Inter", sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #64748b;
+        }
+        .stTabs [data-baseweb="tab-highlight"] { background-color: #4f46e5; }
+        .stTabs [aria-selected="true"] { color: #0f172a; }
+
+        /* ── Divider ──────────────────────────────────────────── */
+        hr { border-color: #e2e8f0; }
+
+        /* ── Radio ────────────────────────────────────────────── */
+        .stRadio > div { gap: 0.5rem; }
+        .stRadio label { font-family: "Inter", sans-serif; font-size: 0.9rem; }
         </style>
         """,
         unsafe_allow_html=True,
@@ -126,9 +208,6 @@ def _init_session_state() -> None:
         "manual_soft_skills": "",
         "manual_certifications": "",
         "manual_awards": "",
-        # List-based entries — each dict holds the field values directly so
-        # they survive page-navigation and mode-switch (widget keys are volatile;
-        # the dicts are the stable source of truth).
         "manual_work_entries": [{"title": "", "company": "", "start": "", "end": "", "bullets": ""}],
         "manual_education_entries": [{"degree": "", "school": "", "start": "", "end": "", "details": ""}],
         "manual_project_entries": [{"name": "", "bullets": ""}],
@@ -160,7 +239,6 @@ _EMPTY_PROJ = lambda: {"name": "", "bullets": ""}
 
 
 def _sync_widgets_to_entries() -> None:
-    """Pull live widget values into the entry dicts (stable backing storage)."""
     for i, entry in enumerate(st.session_state.manual_work_entries):
         for field in _WORK_FIELDS:
             entry[field] = st.session_state.get(f"wexp_{i}_{field}", entry.get(field, ""))
@@ -173,12 +251,6 @@ def _sync_widgets_to_entries() -> None:
 
 
 def _restore_widget_keys() -> None:
-    """Seed any missing widget keys from the entry dicts.
-
-    Widget keys are cleared by Streamlit when toggling intake mode or
-    navigating between pages. This restores them so the inputs re-render
-    with the user's last values instead of going blank.
-    """
     for i, entry in enumerate(st.session_state.manual_work_entries):
         for field in _WORK_FIELDS:
             key = f"wexp_{i}_{field}"
@@ -366,6 +438,80 @@ def _build_manual_candidate_profile() -> dict[str, Any]:
     }
 
 
+def _render_sidebar_steps() -> None:
+    candidate_ready = st.session_state.candidate_data is not None
+    job_ready = bool(st.session_state.get("job_description", "").strip())
+    outputs_ready = bool(st.session_state.get("resume_md") or st.session_state.get("cover_letter_md"))
+
+    steps = [
+        ("Add your profile", candidate_ready),
+        ("Add target job", job_ready),
+        ("Generate documents", outputs_ready),
+    ]
+
+    rows = ""
+    for i, (label, done) in enumerate(steps, 1):
+        if done:
+            circle_bg = "#4f46e5"
+            circle_fg = "#ffffff"
+            circle_border = "none"
+        else:
+            circle_bg = "#ffffff"
+            circle_fg = "#6366f1"
+            circle_border = "2px solid #e0e7ff"
+        icon = "✓" if done else str(i)
+        label_color = "#0f172a" if done else "#94a3b8"
+        label_weight = "500" if done else "400"
+        rows += f"""
+        <div style="display:flex;align-items:center;gap:10px;padding:6px 0;">
+            <div style="width:22px;height:22px;border-radius:50%;background:{circle_bg};
+                        color:{circle_fg};border:{circle_border};
+                        display:flex;align-items:center;justify-content:center;
+                        font-size:11px;font-weight:700;flex-shrink:0;font-family:Inter,sans-serif;">
+                {icon}
+            </div>
+            <span style="font-family:Inter,sans-serif;font-size:13px;
+                         color:{label_color};font-weight:{label_weight};">{label}</span>
+        </div>"""
+
+    st.markdown(f'<div style="padding:2px 0">{rows}</div>', unsafe_allow_html=True)
+
+
+def _render_status_card() -> None:
+    source = "Upload" if st.session_state.intake_mode == "Upload Resume" else "Manual"
+    loaded = "Yes" if st.session_state.resume_name else "No"
+    job_title = st.session_state.job_title or "—"
+    profile_ready = st.session_state.candidate_data is not None
+    outputs_ready = bool(st.session_state.resume_md or st.session_state.cover_letter_md)
+
+    def _row(label: str, value: str, highlight: bool = False) -> str:
+        color = "#4f46e5" if highlight else "#0f172a"
+        return f"""
+        <div style="display:flex;justify-content:space-between;align-items:center;
+                    padding:9px 0;border-bottom:1px solid #f8fafc;">
+            <span style="font-family:Inter,sans-serif;font-size:0.82rem;color:#64748b;">{label}</span>
+            <span style="font-family:Inter,sans-serif;font-size:0.82rem;font-weight:600;color:{color};">{value}</span>
+        </div>"""
+
+    rows = (
+        _row("Profile source", source)
+        + _row("Resume loaded", loaded)
+        + _row("Job title", job_title)
+        + _row("Profile", "✓ Ready" if profile_ready else "Waiting", highlight=profile_ready)
+        + _row("Documents", "✓ Ready" if outputs_ready else "Not generated", highlight=outputs_ready)
+    )
+
+    st.markdown(
+        f"""
+        <div class="app-card">
+            <p class="section-label">Session Status</p>
+            {rows}
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
 def main() -> None:
     load_runtime_secrets(REPO_ROOT)
     _init_session_state()
@@ -381,13 +527,9 @@ def main() -> None:
 
     st.markdown(
         """
-        <div class="hero-card">
-            <div class="hero-kicker">Career Documents, Tailored Fast</div>
-            <div class="hero-title">HireMe.AI</div>
-            <p class="muted-note">
-                Upload a resume, drop in a target job description, and generate a tailored resume
-                plus cover letter from one workflow.
-            </p>
+        <div class="app-header">
+            <span class="app-name">HireMe<span style="color:#4f46e5">.AI</span></span>
+            <span class="app-tagline">Resume &amp; cover letter, tailored to your target role.</span>
         </div>
         """,
         unsafe_allow_html=True,
@@ -400,19 +542,24 @@ def main() -> None:
         st.stop()
 
     with st.sidebar:
-        st.markdown("### Workflow")
-        st.markdown("1. Upload a resume or fill in your profile")
-        st.markdown("2. Parse the resume or save the manual profile")
-        st.markdown("3. Add the target job")
-        st.markdown("4. Generate tailored documents")
-        st.markdown("---")
-        st.markdown("### Supported Files")
-        st.caption(".txt, .md, .docx, .pdf, .png, .jpg, .jpeg, .webp")
+        st.markdown(
+            '<div style="padding:0.75rem 0 1rem;">'
+            '<span style="font-family:\'Space Grotesk\',sans-serif;font-size:1.2rem;'
+            'font-weight:700;color:#0f172a;letter-spacing:-0.02em;">'
+            'HireMe<span style="color:#4f46e5">.AI</span>'
+            '</span></div>',
+            unsafe_allow_html=True,
+        )
+        st.markdown('<p class="section-label">Workflow</p>', unsafe_allow_html=True)
+        _render_sidebar_steps()
+        st.divider()
+        st.markdown('<p class="section-label">Supported Formats</p>', unsafe_allow_html=True)
+        st.caption(".txt · .md · .docx · .pdf · .png · .jpg · .webp")
 
     intake_col, status_col = st.columns([1.5, 0.9], gap="large")
 
     with intake_col:
-        st.markdown('<div class="panel-card">', unsafe_allow_html=True)
+        st.markdown('<div class="app-card">', unsafe_allow_html=True)
         st.radio(
             "Profile input method",
             ["Upload Resume", "Fill In Profile"],
@@ -478,24 +625,27 @@ def main() -> None:
             with extras_col:
                 st.text_area("Certifications", key="manual_certifications", height=90)
                 st.text_area("Awards", key="manual_awards", height=90)
-                st.caption("Awards format: `Title | Year | Description`, one per line.")
+                st.caption("Format: `Title | Year | Description`, one per line.")
 
             manual_profile_clicked = st.button("Save Manual Profile")
 
+        st.divider()
+        st.markdown('<p class="section-label">Target Job</p>', unsafe_allow_html=True)
         st.text_input("Job title", key="job_title_input", on_change=_sync_job_inputs_to_state)
         st.text_input("Company name", key="company_name_input", on_change=_sync_job_inputs_to_state)
         st.text_area(
             "Job description",
-            height=250,
+            height=220,
             key="job_description_input",
             on_change=_sync_job_inputs_to_state,
         )
-        st.markdown("---")
-        st.markdown("**How creative should the writing be?**")
-        creativity_col1, creativity_col2, creativity_col3 = st.columns([1, 3, 1])
-        with creativity_col1:
+
+        st.divider()
+        st.markdown('<p class="section-label">Writing Style</p>', unsafe_allow_html=True)
+        c_left, c_slider, c_right = st.columns([1, 4, 1])
+        with c_left:
             st.caption("Precise")
-        with creativity_col2:
+        with c_slider:
             st.slider(
                 "Creativity",
                 min_value=0.0,
@@ -503,28 +653,16 @@ def main() -> None:
                 step=0.1,
                 key="creativity_level",
                 label_visibility="collapsed",
-                help="Low = consistent, close to your exact words. High = more varied and expressive phrasing.",
+                help="Low = consistent, close to your exact words. High = more varied phrasing.",
             )
-        with creativity_col3:
+        with c_right:
             st.caption("Creative")
+
         generate_clicked = st.button("Generate Documents")
         st.markdown("</div>", unsafe_allow_html=True)
 
     with status_col:
-        st.markdown('<div class="panel-card">', unsafe_allow_html=True)
-        st.markdown("### Session Status")
-        st.metric(
-            "Profile Source",
-            "Upload" if st.session_state.intake_mode == "Upload Resume" else "Manual",
-        )
-        st.metric("Resume Loaded", "Yes" if st.session_state.resume_name else "No")
-        st.metric("Job Title", st.session_state.job_title or "Not set")
-        st.metric("Profile Ready", "Ready" if st.session_state.candidate_data else "Waiting")
-        st.metric(
-            "Outputs",
-            "Ready" if st.session_state.resume_md or st.session_state.cover_letter_md else "Not generated",
-        )
-        st.markdown("</div>", unsafe_allow_html=True)
+        _render_status_card()
 
     if manual_profile_clicked:
         _sync_job_inputs_to_state()
@@ -608,32 +746,62 @@ def main() -> None:
         parsed_tab, resume_tab, cover_tab = st.tabs(["Parsed Profile", "Resume", "Cover Letter"])
 
         with parsed_tab:
-            st.markdown('<div class="panel-card">', unsafe_allow_html=True)
+            st.markdown('<div class="app-card">', unsafe_allow_html=True)
             st.json(st.session_state.candidate_data)
             st.markdown("</div>", unsafe_allow_html=True)
 
         with resume_tab:
-            st.markdown('<div class="panel-card">', unsafe_allow_html=True)
+            st.markdown('<div class="app-card">', unsafe_allow_html=True)
             if st.session_state.resume_md:
                 st.markdown(st.session_state.resume_md)
-                st.download_button(
-                    "Download Resume Markdown",
-                    st.session_state.resume_md,
-                    file_name="resume_output.md",
-                )
+                dl_col1, dl_col2 = st.columns(2)
+                with dl_col1:
+                    st.download_button(
+                        "Download Resume (.md)",
+                        st.session_state.resume_md,
+                        file_name="resume_output.md",
+                        use_container_width=True,
+                    )
+                with dl_col2:
+                    try:
+                        resume_docx = _to_docx_bytes(st.session_state.resume_md)
+                        st.download_button(
+                            "Download Resume (.docx)",
+                            resume_docx,
+                            file_name="resume_output.docx",
+                            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                            use_container_width=True,
+                        )
+                    except Exception:
+                        st.caption("Word export unavailable — pandoc could not be initialized.")
             else:
                 st.info("Generate documents to see the tailored resume.")
             st.markdown("</div>", unsafe_allow_html=True)
 
         with cover_tab:
-            st.markdown('<div class="panel-card">', unsafe_allow_html=True)
+            st.markdown('<div class="app-card">', unsafe_allow_html=True)
             if st.session_state.cover_letter_md:
                 st.markdown(st.session_state.cover_letter_md)
-                st.download_button(
-                    "Download Cover Letter Markdown",
-                    st.session_state.cover_letter_md,
-                    file_name="cover_letter_output.md",
-                )
+                dl_col1, dl_col2 = st.columns(2)
+                with dl_col1:
+                    st.download_button(
+                        "Download Cover Letter (.md)",
+                        st.session_state.cover_letter_md,
+                        file_name="cover_letter_output.md",
+                        use_container_width=True,
+                    )
+                with dl_col2:
+                    try:
+                        cover_docx = _to_docx_bytes(st.session_state.cover_letter_md)
+                        st.download_button(
+                            "Download Cover Letter (.docx)",
+                            cover_docx,
+                            file_name="cover_letter_output.docx",
+                            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                            use_container_width=True,
+                        )
+                    except Exception:
+                        st.caption("Word export unavailable — pandoc could not be initialized.")
             else:
                 st.info("Generate documents to see the tailored cover letter.")
             st.markdown("</div>", unsafe_allow_html=True)

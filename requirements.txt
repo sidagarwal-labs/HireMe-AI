@@ -13,3 +13,4 @@ rank-bm25
 faiss-cpu
 numpy
 python-jobspy
+pypandoc
