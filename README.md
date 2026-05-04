@@ -5,6 +5,8 @@ An AI-powered resume & cover letter builder with integrated job search. Upload y
 
 **Live App:** [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://YOUR-APP-URL.streamlit.app](https://hireme-ai.streamlit.app/))
 
+[![PPT](https://github.com/sidagarwal-labs/HireMe-AI/blob/main/HireMe_AI_Presentation.pdf)], [![Doc](https://github.com/sidagarwal-labs/HireMe-AI/blob/main/Project%20Documentation.pdf)]
+
 ---
 
 ## What It Does
